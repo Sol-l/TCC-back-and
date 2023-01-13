@@ -2288,38 +2288,36 @@ text-align: center;
 	16 -> Encomenda
 ===========================================================*/
 
-.texto-encomenda {
-  text-align: center;
-}
 
 /*=========================================================
 	17 -> Carousel
 ===========================================================*/
 
-.container-fluid {
+.carrossel {
   padding: 0;
 }
 
-#mainSlider .carousel-inner, #mainSlider .carousel-item {
-  height: 90vh;
+#carrossel .carousel-inner, #carrossel .carousel-item {
 }
 
-#mainSlider .carousel-caption {
+#carrossel .carousel-caption {
   top: 30%
 }
 
-#mainSlider .carousel-caption h2 {
-  font-size: 50px;
+#carrossel .carousel-caption h2 {
+  font-size: 25px;
   margin-bottom: 30px;
+  color: rgb(252, 252, 252);
 }
 
-#mainSlider .carousel-caption p {
-  font-size: 22px;
+#carrossel .carousel-caption p {
+  font-size: 18px;
   font-weight: 300;
   margin-bottom: 100px;
   color: #FFF;
 }
 
+/*
 .main-btn {
   background-color: #012970;
   color: #FFF;
@@ -2332,13 +2330,24 @@ text-align: center;
   transition: .5s;
 }
 
+
 .main-btn:hover {
   text-decoration: none;
   color: #FFF;
   background-color:  transparent;
   border-color: #798eb3;
-}
+}*/
 
 .carousel-indicators .active {
-  background-color: #012970;
+  background-color: #FDB900;
+}
+
+.vertical {
+  position: absolute; top: 0; bottom: 1; left: 0; right: 0; 
+  margin-top: calc(17%);
+}
+
+.vertical-1 {
+  position: absolute; top: 0; bottom: 1; left: 0; right: 0; 
+  margin-top: calc(17%);
 }

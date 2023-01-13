@@ -10,8 +10,12 @@ async function abrecadastro(req, res) {
   res.render("cliente/cadastro.ejs");
 }
 
+async function abreproduto(req, res) {
+  res.render("cliente/product.ejs");
+}
 module.exports = {
   index,
   abrelogin,
   abrecadastro,
+  abreproduto,
 };

@@ -43,10 +43,9 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> (53) 999967412</a></li>
+						<li><a href="https://web.whatsapp.com/send?phone=999967412" target="_blank"><i class="fa fa-whatsapp"></i> (53) 999967412</a></li>
 						<li><a href="https://instagram.com/studiosollartesanatos?igshid=ZmRlMzRkMDU="><i class="fa fa-instagram"></i> @studiosollartesanatos</a></li>
 						<li><a href="https://www.google.com.br/maps/@-31.3109924,-54.1129319,3a,75y,54.68h,84.93t/data=!3m6!1e1!3m4!1so09rELnOH1uLoA0xTQ7MCg!2e0!7i16384!8i8192"><i class="fa fa-map-marker"></i> Av Espanha 439</a></li>
-					</ul>
 					</ul>
 					<ul class="header-links pull-right">
 						<li><a href="/login"><i class="fa fa-user"></i>Entrar</a></li>
@@ -65,7 +64,6 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo">
 									<img src="./img/logo.png" alt="">
 								</a>
 							</div>
@@ -205,48 +203,51 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-					<!-- shop /shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/shop01.png" alt="">
+					<!-- carousel-->
+				<section class="carousel slide" id="carrossel">
+					<ol class="carousel-indicators">
+						<li data-target="#carrossel" data-slide-to="0" class="active"></li>
+						<li data-target="#carrossel" data-slide-to="1"></li>
+					</ol>
+					<div class="carousel-inner" >
+						<section class="item active">
+							<img src="img/red.jpg" alt="img1" class="img-responsive" width="100%">
+							<div class="carousel-caption">
+								<h2>Deseja personalizar sua tábua?</h2>
+								<p>Para encomendar qualquer tábua personalizada ao seu estilo, basta entrar em contado com este número <strong>(53)999967412!</strong></p>
 							</div>
-							<div class="shop-body">
-								<h3>Recém<br>Adicionados</h3>
-								<a href="#" class="cta-btn">Confira Já <i class="fa fa-arrow-circle-right"></i></a>
+						</section>
+						<section class="item">
+							<img src="img/red.jpg" alt="img1" class="img-responsive" width="100%">
+							<div class="carousel-caption">
+								<h2>Procurando algum presente único e original?</h2>
+								<p>Aqui você encontrará produtos personalizados e muito mais!</p>
 							</div>
-						</div>
+						</section>
+						<!-- carousel -3
+						<section class="item">
+							<img src="img/teste.jpg" alt="img1" class="img-responsive" width="100%">
+							<div class="carousel-caption ">
+								<h2>Texto alea</h2>
+								<p>Carara</p>
+							</div>
+						</section>
+						 carousel-->
 					</div>
-					<!-- shop /shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/shop03.png" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Mais<br>Vendidos</h3>
-								<a href="#" class="cta-btn">Confira Já <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
+					<div class="vertical">
+				<a href="#carrossel" class="carousel-control left" data-slide="prev" role="button">
+					<i class="fa fa-arrow-left" aria-hidden="true"></i>
+					<i class="sr-only">Anterior</i>
+				</a>
 					</div>
-					<!-- shop /shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/shop02.png" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Encomende<br>Sua Tábua</h3>
-								<a href="#" class="cta-btn">Confira Já <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
+					<div class="vertical-1">
+				<a href="#carrossel" class="carousel-control right" data-slide="next" role="button">
+					<span class="fa fa-arrow-right" aria-hidden="true"></span>
+					<span class="sr-only">Próximo</span>
+				</a>
 					</div>
-					<!-- shop /shop -->				
-				</div>
-				<!-- carousel-->
-
+			</section>
 				<!-- /carousel-->
-
 				<!-- /row -->
 			</div>
 			<!-- /container -->
@@ -306,7 +307,7 @@
 												<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
 													<i class="fa fa-exchange"></i>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
+													<a href="/product"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
@@ -337,7 +338,7 @@
 												<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
 													<i class="fa fa-exchange"></i>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
+													<a href="/product"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
@@ -363,7 +364,7 @@
 												<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
 													<i class="fa fa-exchange"></i>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
+													<a href="/product"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
@@ -391,7 +392,7 @@
 												<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
 													<i class="fa fa-exchange"></i>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
+													<a href="/product"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
@@ -419,7 +420,7 @@
 												<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
 													<i class="fa fa-exchange"></i>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
+													<a href="/product"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
@@ -495,7 +496,7 @@
 												<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
 													<i class="fa fa-exchange"></i>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
+													<a href="/product"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
@@ -526,7 +527,7 @@
 												<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
 													<i class="fa fa-exchange"></i>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
+													<a href="/product"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
@@ -552,7 +553,7 @@
 												<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
 													<i class="fa fa-exchange"></i>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
+													<a href="/product"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
@@ -580,7 +581,7 @@
 												<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
 													<i class="fa fa-exchange"></i>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
+													<a href="/product"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
@@ -608,7 +609,7 @@
 												<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
 													<i class="fa fa-exchange"></i>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
+													<a href="/product"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
@@ -926,14 +927,6 @@
 		<!-- /SECTION -->
 
 		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
-			<div class="texto-encomenda">
-				<h2><strong> Encomende Sua Tábua! </strong></h2>
-				<p>Para encomendar qualquer tábua personalizada no seu estilo, basta entrar em contado com este número (53) 999967412! </p>
-				<p>Podemos personalizar adiconando logos, nomes, espaço para molho e muito mais! Para ver outros produtos prontos 
-					<a target="_blank" href="store.html" style="color: inherit; text-decoration: underline;">Clique Aqui!</a> </p>
-			</div>
-		</div>
 		<!-- /NEWSLETTER -->
 
 		<!-- FOOTER -->

@@ -5,5 +5,7 @@ const clienteController = require("../controller/clienteController");
 router.get("/", clienteController.index);
 router.get("/login", clienteController.abrelogin);
 router.get("/cadastro", clienteController.abrecadastro);
+router.get("/product", clienteController.abreproduto);
+
 
 module.exports = router;
