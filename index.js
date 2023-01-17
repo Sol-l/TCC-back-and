@@ -3,7 +3,6 @@ const app = express();
 const path = require("path");
 var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
-var path = require('path')
 
 app.use(cookieParser())
 
@@ -22,3 +21,7 @@ app.use("/admin", crudRoute);
 app.listen("3000", function (req, res) {
   console.log("Servidor rodando");
 });
+
+app.post('/cadastro', function(req, res){
+    console.log("Nome " + req.body.nome + " Email " + req.body.email )
+})
