@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
+var Usuario = require('./model/usuario')
 
 app.use(cookieParser())
 
@@ -23,5 +24,17 @@ app.listen("3000", function (req, res) {
 });
 
 app.post('/cadastro', function(req, res){
-    console.log("Nome " + req.body.nome + " Email " + req.body.email )
+    var usuario = new Usuario({
+      nome: req.body.txtNome,
+      sobrenome: req.body.txtSobrenome,
+      email: req.body.txtEmail,
+      senha: req.body.txtSenha
+    })
+    usuario.save(function(err){
+      if(err){
+          console.log(err)
+      }else {
+        res.redirect('/');
+      }
+    })
 })
