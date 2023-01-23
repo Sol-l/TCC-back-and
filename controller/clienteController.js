@@ -13,9 +13,15 @@ async function abrecadastro(req, res) {
 async function abreproduto(req, res) {
   res.render("cliente/product.ejs");
 }
+
+async function abrestore(req, res) {
+  res.render("cliente/store.ejs");
+}
+
 module.exports = {
   index,
   abrelogin,
   abrecadastro,
   abreproduto,
+  abrestore,
 };
