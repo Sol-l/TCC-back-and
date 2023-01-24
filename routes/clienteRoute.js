@@ -7,7 +7,6 @@ router.get("/login", clienteController.abrelogin);
 router.get("/cadastro", clienteController.abrecadastro);
 router.get("/product", clienteController.abreproduto);
 router.get("/store", clienteController.abrestore);
-
-
+router.get("/checkout", clienteController.abrecheckout);
 
 module.exports = router;

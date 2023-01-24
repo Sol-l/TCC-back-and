@@ -18,10 +18,15 @@ async function abrestore(req, res) {
   res.render("cliente/store.ejs");
 }
 
+async function abrecheckout(req, res) {
+  res.render("cliente/checkout.ejs");
+}
+
 module.exports = {
   index,
   abrelogin,
   abrecadastro,
   abreproduto,
   abrestore,
+  abrecheckout,
 };
