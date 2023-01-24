@@ -91,15 +91,17 @@
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
+								
 								<!-- Wishlist -->
 								<div class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 										<i class="fa fa-heart-o"></i>
 										<span>Desejos</span>
-										<div class="qty">2</div>
+										<div class="qty">1</div>
 									</a>
 									<div class="cart-dropdown">
 										<div class="cart-list">
+											<!--Inicio do for do carrinho-->
 											<div class="product-widget">
 												<div class="product-img">
 													<img src="./img/product01.png" alt="">
@@ -110,20 +112,11 @@
 												</div>
 												<button class="delete"><i class="fa fa-close"></i></button>
 											</div>
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product02.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">3x</span>R$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
+											<!--fim do for do carrinho-->
 										</div>
 										<div class="cart-summary">
-											<small>2 Item(s) selecionados</small>
-											<h5>SUBTOTAL: R$2940.00</h5>
+											<small>1 Item(s) selecionados</small>
+											<h5>SUBTOTAL: R$980.00</h5>
 										</div>
 										<div class="cart-btns">
 											<a href="#">Adicionar ao Carrinho  <i class="fa fa-arrow-circle-right"></i></a>
@@ -137,10 +130,11 @@
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Carrinho</span>
-										<div class="qty">2</div>
+										<div class="qty">1</div>
 									</a>
 									<div class="cart-dropdown">
 										<div class="cart-list">
+											<!-- Inicio do For do carrinho-->
 											<div class="product-widget">
 												<div class="product-img">
 													<img src="./img/product01.png" alt="">
@@ -151,24 +145,14 @@
 												</div>
 												<button class="delete"><i class="fa fa-close"></i></button>
 											</div>
-
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product02.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">3x</span>R$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
+											<!-- Fim do for do carrinho-->											
 										</div>
 										<div class="cart-summary">
-											<small>2 Item(s) selecionados</small>
-											<h5>SUBTOTAL: R$2940.00</h5>
+											<small>1 Item(s) selecionados</small>
+											<h5>SUBTOTAL: R$980.00</h5>
 										</div>
 										<div class="cart-btns">
-											<a href="#">Carrinho  <i class="fa fa-arrow-circle-right"></i></a>
+											<a href="/checkout">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 									</div>
 								</div>
@@ -225,7 +209,7 @@
 					<div class="col-md-12">
 						<h3 class="breadcrumb-header">CADASTRE-SE</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
+							<li><a href="/">Home</a></li>
 							<li class="active">Cadastro</li>
 						</ul>
 					</div>
@@ -250,11 +234,11 @@
 			<div class="mb-3">
 			  <label for="exampleInputEmail1" class="form-label">Endereço de Email</label>
 			  <input type="email" name="txtEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu Email">
-			  <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
+			  <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com ninguém.</div>
 			</div><br>
 			<div class="mb-3">
 				<div class="form-group field-one">	
-				<input type="password" name="txtSenha" class="form-control" id="PasswordC" placeholder="Digite sua Senha"><br>
+				<input type="password" name="txtSenha" class="form-control" id="PasswordC" placeholder="Digite sua Senha">
 				<i class="fa fa-eye" id="eye" onclick="mostrarOcultarSenha()" oaria-hidden="true"></i>
 			  	</div>
 			</div>
@@ -265,7 +249,7 @@
 		  <div class="mb-4">
 			<button type="submit" class="btn btn-primary" style="background-color: #FDB900">CRIAR CONTA</button>
 			</div>		 
-		 </form>
+		 
 		<br>
 				<!-- API endereço --> 
 				
@@ -278,7 +262,7 @@
 			</label></div>
 			<div class="caption">
 				
-	<script>
+		<script>
 			function limpa_formulário_cep() {
 					//Limpa valores do formulário de cep.
 					document.getElementById('rua').value=("");
@@ -343,33 +327,34 @@
 					limpa_formulário_cep();
 				}
 			};
-		
 			</script>
+
 			<div class="mb-5">
-			<form method="get" action=".">
+			<form method="post" action=".">
 				<div class="form-group">
 					<input class="input" type="text" id="cep" value="" cep="first-name" placeholder="Digite seu CEP" onblur="pesquisacep(this.value);">
 				</div>
 				<div class="form-group">
-					<input class="input" type="text" id="rua" placeholder="Rua">
+					<input class="input" name="txtRua" type="text" id="rua" placeholder="Rua">
 				</div>
 				<div class="form-group">
-					<input class="input" type="text" id="bairro" placeholder="Bairro">
+					<input class="input" name="txtBairro" type="text" id="bairro" placeholder="Bairro">
 				</div>
 				<div class="form-group">
-					<input class="input" type="text" id="cidade" placeholder="Cidade">
+					<input class="input" name="txtCidade" type="text" id="cidade" placeholder="Cidade">
 				</div>
 				<div class="form-group">
-					<input class="input" type="text" id="uf" placeholder="Estado">
+					<input class="input" name="txtEstado"type="text" id="uf" placeholder="Estado">
 				</div>
 				<div class="form-group">
-					<input class="input" type="text" id="" placeholder="Complemento">
+					<input class="input" name="txtComple"type="text" id="" placeholder="Complemento">
 				</div>
 				<div class="form-group">
-					<input class="input" type="text" id="num" placeholder="Digite seu Número">
+					<input class="input" name="txtNumero" type="text" id="num" placeholder="Digite seu Número">
 				</div>
 			</form>
 			</div>
+		</form>
 		</div>
 
 		<!-- SECTION -->

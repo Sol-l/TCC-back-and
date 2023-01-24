@@ -28,7 +28,13 @@ app.post('/cadastro', function(req, res){
       nome: req.body.txtNome,
       sobrenome: req.body.txtSobrenome,
       email: req.body.txtEmail,
-      senha: req.body.txtSenha
+      senha: req.body.txtSenha,
+      rua: req.body.txtRua,
+      bairro: req.body.txtBairro,
+      cidade: req.body.txtCidade,
+      estado: req.body.txtEstado,
+      complemente: req.body.txtComple,
+      numero: req.body.txtNumero
     })
     usuario.save(function(err){
       if(err){
