@@ -2372,7 +2372,63 @@ text-align: center;
   top: 11px;
 }
 
-
 /*=========================================================
-	18 -> Posição do ícone eye
+	19 -> Informações de Perfil 
 ===========================================================*/
+
+.row2 {
+  display: flex;
+ 
+ }
+ 
+ .box-cell {
+   min-width:40vw;
+ }
+ #edtNome{
+   background-color: #03cc25;
+   border-color: rgb(0, 0, 0);
+   border-radius: 8px;
+   color: white;
+ }
+ 
+ #edtSenha{
+   background-color: rgb(250, 38, 38);
+   border-color: rgb(0, 0, 0);
+   border-radius: 8px;
+   color: white;
+ }
+ 
+ #txtCidade, #txtEstado{
+   position: relative;
+   top: -25%;
+   right: -100px;
+ }
+ 
+ #txtComplemento, #txtNumero{
+   position: relative;
+   top: -50%;
+   right: -200px;
+ }
+ 
+ #edtEndereco, #exConta{
+   position: relative;
+   top: -117px;
+ }
+ 
+ #edtEndereco{
+   position: relative;
+   top: -117px;
+   background-color: #03cc25;
+   border-color: rgb(0, 0, 0);
+   border-radius: 8px;
+   color: white;
+ }
+ 
+ #exConta{
+   position: relative;
+   top: -117px;
+   background-color: rgb(250, 38, 38);
+   border-color: rgb(0, 0, 0);
+   border-radius: 8px;
+   color: white;
+ }

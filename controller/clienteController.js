@@ -22,6 +22,10 @@ async function abrecheckout(req, res) {
   res.render("cliente/checkout.ejs");
 }
 
+async function abreperfil(req, res) {
+  res.render("cliente/perfil.ejs");
+}
+
 module.exports = {
   index,
   abrelogin,
@@ -29,4 +33,5 @@ module.exports = {
   abreproduto,
   abrestore,
   abrecheckout,
+  abreperfil,
 };
