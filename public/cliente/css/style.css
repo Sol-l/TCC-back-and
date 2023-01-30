@@ -2382,7 +2382,7 @@ text-align: center;
  }
  
  .box-cell {
-   min-width:40vw;
+   min-width:30vw;
  }
  #edtNome{
    background-color: white;
@@ -2402,14 +2402,14 @@ text-align: center;
  
  #txtCidade, #txtEstado{
    position: relative;
-   top: -25%;
-   right: -100px;
+   top: -80px;
+   right: -170px;
  }
  
  #txtComplemento, #txtNumero{
    position: relative;
-   top: -50%;
-   right: -200px;
+   top: -140px;
+   right: -250px;
  }
  
  #edtEndereco, #exConta{
@@ -2419,7 +2419,7 @@ text-align: center;
  
  #edtEndereco{
    position: relative;
-   top: -117px;
+   top: -137px;
    background-color: white;
    border-color: #03cc25;
    border-radius: 12px;
@@ -2429,7 +2429,7 @@ text-align: center;
  
  #exConta{
    position: relative;
-   top: -117px;
+   top: -137px;
    background-color: white;
    border-color: rgb(250, 38, 38);
    border-radius: 12px;

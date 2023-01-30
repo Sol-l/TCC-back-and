@@ -9,7 +9,7 @@ var UsuarioSchema = conexao.Schema({
     bairro:{type:String},
     cidade:{type:String},
     estado:{type:String},
-    complemente:{type:String},
+    complemento:{type:String},
     numero:{type:String},
 })
 

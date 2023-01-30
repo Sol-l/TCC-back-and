@@ -7,3 +7,11 @@ function mostrarOcultarSenha(){
         senha.type="password";
     }
 }
+
+function preencherComplemento(){
+    var pre=document.getElementById("txtComplemento");
+    
+    if(pre==null){
+        pre="vazio"
+    }
+}
