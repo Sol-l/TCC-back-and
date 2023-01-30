@@ -201,10 +201,10 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">LOGIN</h3>
+						<h3 class="breadcrumb-header">Perfil</h3>
 						<ul class="breadcrumb-tree">
 							<li><a href="/">Home</a></li>
-							<li class="active">Blank</li>
+							<li class="active">Perfil</li>
 						</ul>
 					</div>
 				</div>
@@ -222,22 +222,24 @@
 				<div class="row">
                     <div class="row2">
                         <div class="box-cell box1">
+							<%for(usuario of Usuarios){%>
                             <h4>Informações da Conta</h4>
-                                <p id="txtNome">Nome</p>
-                                <p id="txtEmail">Email</p>
-                                <button id="edtNome" type="button" class="btn btn-success">Editar</button>
+                                <p id="txtNome"><%=usuario.nome%></p>
+                                <p id="txtEmail"><%=usuario.email%></p>
+                                <button id="edtNome" type="buttons" class="btn btn-success">Editar</button>
                                 <button id="edtSenha" type="button" class="btn btn-danger">Mudar Senha</button>
                         </div>
                         <div class="box-cell">
                             <h4>Endereço Cadastrado</h4>
-                                <p id="txtRua">Rua</p>
-                                <p id="txtBairro">Bairro</p>
-                                <p id="txtCidade">Cidade</p>
-                                <p id="txtEstado">Estado</p>
-                                <p id="txtComplemento">Complemento</p>
-                                <p id="txtNumero">Número</p>
+                                <p id="txtRua"><%=usuario.rua%></p>
+                                <p id="txtBairro"><%=usuario.bairro%></p>
+                                <p id="txtCidade"><%=usuario.cidade%></p>
+                                <p id="txtEstado"><%=usuario.estado%></p>
+                                <p id="txtComplemento"><%=usuario.complemento%></p>
+                                <p id="txtNumero"><%=usuario.numero%></p>
                                 <button id="edtEndereco" type="button" class="btn btn-success">Editar Endereço</button>
-                                <button id="exConta" type="button" class="btn btn-danger">Excluir Conta</button>
+                                <button a href="/del/<%=usuario.id%>" id="exConta" type="button" class="btn btn-danger">Excluir Conta</button>
+								<% } %>
                         </div>
                     </div>
 				</div>

@@ -1,3 +1,5 @@
+var Usuario = require('../model/usuario')
+
 async function index(req, res) {
   res.render("cliente/index.ejs");
 }
@@ -23,7 +25,10 @@ async function abrecheckout(req, res) {
 }
 
 async function abreperfil(req, res) {
-  res.render("cliente/perfil.ejs");
+  Usuario.find({}).exec(function(err,docs){
+    res.render("cliente/perfil.ejs" ,{Usuarios:docs});
+  })
+  
 }
 
 module.exports = {

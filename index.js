@@ -44,3 +44,14 @@ app.post('/cadastro', function(req, res){
       }
     })
 })
+
+app.get('/del/:id', function(req, res){
+  Usuario.findByIdAndDelete(req.params.id, function(err){
+    if(err){
+      console.log(err)
+    }else{
+      res.redirect('/');
+    }
+  })
+  console.log(req.params.id)
+})

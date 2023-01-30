@@ -2385,17 +2385,19 @@ text-align: center;
    min-width:40vw;
  }
  #edtNome{
-   background-color: #03cc25;
-   border-color: rgb(0, 0, 0);
-   border-radius: 8px;
-   color: white;
+   background-color: white;
+   border-color: #03cc25;
+   border-radius: 12px;
+   border-width: 2px;
+   color: #03cc25;
  }
  
  #edtSenha{
-   background-color: rgb(250, 38, 38);
-   border-color: rgb(0, 0, 0);
-   border-radius: 8px;
-   color: white;
+  background-color: white;
+  border-color: rgb(250, 38, 38);
+  border-radius: 12px;
+  border-width: 2px;
+  color: rgb(250, 38, 38);
  }
  
  #txtCidade, #txtEstado{
@@ -2418,17 +2420,19 @@ text-align: center;
  #edtEndereco{
    position: relative;
    top: -117px;
-   background-color: #03cc25;
-   border-color: rgb(0, 0, 0);
-   border-radius: 8px;
-   color: white;
+   background-color: white;
+   border-color: #03cc25;
+   border-radius: 12px;
+   border-width: 2px;
+   color: #03cc25;
  }
  
  #exConta{
    position: relative;
    top: -117px;
-   background-color: rgb(250, 38, 38);
-   border-color: rgb(0, 0, 0);
-   border-radius: 8px;
-   color: white;
+   background-color: white;
+   border-color: rgb(250, 38, 38);
+   border-radius: 12px;
+   border-width: 2px;
+   color: rgb(250, 38, 38);
  }
