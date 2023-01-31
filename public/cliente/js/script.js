@@ -8,10 +8,3 @@ function mostrarOcultarSenha(){
     }
 }
 
-function preencherComplemento(){
-    var pre=document.getElementById("txtComplemento");
-    
-    if(pre==null){
-        pre="vazio"
-    }
-}

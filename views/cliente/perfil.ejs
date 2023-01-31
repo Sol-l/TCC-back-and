@@ -201,10 +201,10 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">LOGIN</h3>
+						<h3 class="breadcrumb-header">Perfil</h3>
 						<ul class="breadcrumb-tree">
 							<li><a href="/">Home</a></li>
-							<li class="active">Blank</li>
+							<li class="active">Perfil</li>
 						</ul>
 					</div>
 				</div>
@@ -231,12 +231,8 @@
 					</div>
 					<div class="box-cell">
 						<h4>Endereço Cadastrado</h4>
-							<p id="txtRua"><%=usuario.rua%></p>
-							<p id="txtBairro"><%=usuario.bairro%></p><br>
-							<p id="txtCidade"><%=usuario.cidade%></p>
-							<p id="txtEstado"><%=usuario.estado%></p>
-							<p id="txtComplemento"><%=usuario.complemento%></p>
-							<p id="txtNumero"><%=usuario.numero%></p>
+							<p id="txtRua"><%=usuario.rua%> <%=usuario.numero%> <%=usuario.bairro%>  </p>
+							<p id="txtBairro"> <%=usuario.cidade%>-<%=usuario.estado%> <%=usuario.complemento%> </p><br>
 							<button id="edtEndereco" type="button" class="btn btn-success">Editar Endereço</button>
 							<button a href="/del/<%=usuario.id%>" id="exConta" type="button" class="btn btn-danger">Excluir Conta</button>
 							<% } %>
@@ -359,6 +355,5 @@
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
-		<script src="js/script.js"></script>
 	</body>
 </html>

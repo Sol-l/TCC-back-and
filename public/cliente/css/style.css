@@ -2400,26 +2400,9 @@ text-align: center;
   color: rgb(250, 38, 38);
  }
  
- #txtCidade, #txtEstado{
-   position: relative;
-   top: -80px;
-   right: -170px;
- }
- 
- #txtComplemento, #txtNumero{
-   position: relative;
-   top: -140px;
-   right: -250px;
- }
- 
- #edtEndereco, #exConta{
-   position: relative;
-   top: -117px;
- }
- 
  #edtEndereco{
    position: relative;
-   top: -137px;
+   top: -21px;
    background-color: white;
    border-color: #03cc25;
    border-radius: 12px;
@@ -2429,7 +2412,7 @@ text-align: center;
  
  #exConta{
    position: relative;
-   top: -137px;
+   top: -21px;
    background-color: white;
    border-color: rgb(250, 38, 38);
    border-radius: 12px;
