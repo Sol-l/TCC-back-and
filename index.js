@@ -38,7 +38,10 @@ app.post('/cadastro', function(req, res){
     })
     usuario.save(function(err){
       if(err){
-          console.log(err)
+        if(err.message.includes('duplicate key error')) {
+          err = new Error('This email is already registered');
+          res.redirect('/cadastro');
+        } 
       }else {
         res.redirect('/');
       }
