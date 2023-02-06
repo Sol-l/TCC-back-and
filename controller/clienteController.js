@@ -25,7 +25,7 @@ async function abrecheckout(req, res) {
 }
 
 async function abreperfil(req, res) {
-  Usuario.find({}).exec(function(err,docs){
+  Usuario.find({}).exec(function(err,docs){ //a chave dentro do find pode receber um parametro para buscar os usuários
     res.render("cliente/perfil.ejs" ,{Usuarios:docs});
   })
   
