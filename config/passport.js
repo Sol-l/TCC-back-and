@@ -50,4 +50,4 @@ passport.deserializeUser(function (usuario, cb) {
     });
 });
 
-module.exports = passport
+module.exports = passport;

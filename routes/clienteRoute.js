@@ -15,10 +15,8 @@ const passport = require('../config/passport')
 //const bloqueio = require('../config/bloqueio');
 //ISSO É DO LOGIN
 
-const controller = require('../controller/controller')
-
 //abrir a tela de login
-router.get('/', controller.abrirlogin)
+router.get('/', clienteController.abrelogin)
 
 //ISSO É DO LOGIN
 //logar
