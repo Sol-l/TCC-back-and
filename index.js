@@ -1,9 +1,12 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const passport = require('passport')
 var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
 var Usuario = require('./model/usuario')
+var session = require('express-session')
+
 
 app.use(cookieParser())
 
@@ -58,3 +61,14 @@ app.get('/del/:id', function(req, res){
   })
   console.log(req.params.id)
 })
+
+//ISSO É PARA O LOGIN
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    })
+)
+
+app.use(passport.authenticate('session'));
+//ISSO É PARA O LOGIN
