@@ -9,6 +9,14 @@ router.get("/product", clienteController.abreproduto);
 router.get("/store", clienteController.abrestore);
 router.get("/checkout", clienteController.abrecheckout);
 router.get("/perfil", clienteController.abreperfil);
+router.get('/logout', function (req, res, next) {
+    req.logout(function (err) {
+        if (err) {
+            return next(err);
+        }
+        res.redirect('/');
+    });
+});
 
 //ISSO É DO LOGIN
 const passport = require('../config/passport')

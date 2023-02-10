@@ -204,7 +204,7 @@
 						<h3 class="breadcrumb-header">LOGIN</h3>
 						<ul class="breadcrumb-tree">
 							<li><a href="/">Home</a></li>
-							<li class="active">Blank</li>
+							<li class="active">Login</li>
 						</ul>
 					</div>
 				</div>
@@ -220,17 +220,18 @@
 			<div class=" row aling-items-center">
 				<div class="col-md-1 col-lg-2"></div>
 					<div class="col-md-10 mx-auto col-lg-8">
-						<form class="p-4 p-md-5 border rounded-3 bg-light" method="get">
+						<form class="p-4 p-md-5 border rounded-3 bg-light" method="post">
 							<div class="form-floating">							
 								<label for="inputEmail">E-mail</label>
-							<input type="email" name="username" class="form-control" id="inputEmail" placeholder="E-mail"/>
+								<input type="email" name="username" class="form-control" id="inputEmail" placeholder="E-mail" required>
 						</div><br>
 						<div class="form-floating">							
 							<label for="exampleInputPassword">Senha</label>
-							<input type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Senha"/>
+							<input type="password" name="password" class="form-control" id="PasswordC" placeholder="Senha" required>
+							<i class="fa fa-eye" id="eyeLogin" onclick="mostrarOcultarSenha()" oaria-hidden="true"></i>
 						</div>							
 						<div class="checkbox" id="alinhar-checkbox">
-							<button type="submit" class="btn btn-primary"  id="button-login" style="background-color: #FDB900" >ACESSAR CONTA </button><br>
+							<button type="submit" name="terms" class="btn btn-primary"  id="button-login" style="background-color: #FDB900" >ACESSAR CONTA </button><br>
 							<label>	<br>						
 								<input type="checkbox" value="lembrar-me" > Lembrar meus dados
 							</label><br>						
@@ -369,6 +370,7 @@
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/script.js"></script>
 
 	</body>
 </html>
