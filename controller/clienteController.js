@@ -24,6 +24,10 @@ async function abrecheckout(req, res) {
   res.render("cliente/checkout.ejs");
 }
 
+async function abreedita(req, res) {
+  res.render("cliente/edita.ejs");
+}
+
 async function abreperfil(req, res) {
   Usuario.find({}).exec(function(err,docs){ //a chave dentro do find pode receber um parametro para buscar os usuários
     res.render("cliente/perfil.ejs" ,{Usuarios:docs});
@@ -39,4 +43,5 @@ module.exports = {
   abrestore,
   abrecheckout,
   abreperfil,
+  abreedita,
 };

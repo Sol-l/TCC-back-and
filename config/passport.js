@@ -25,21 +25,12 @@ passport.use(new LocalStrategy(async function verify(username, password, cb) {
         }
     }
 }));
-
 passport.serializeUser(function (usuario, cb) {
     process.nextTick(function () {
         cb(null, {
             id: usuario._id,
-            nome: usuario.txtNome,
-            sobrenome: usuario.txtSobrenome,
             email: usuario.txtEmail,
             senha: usuario.txtSenha,
-            rua: usuario.txtRua,
-            bairro: usuario.txtBairro,
-            cidade: usuario.txtCidade,
-            estado: usuario.txtEstado,
-            complemento: usuario.txtComple,
-            numero: usuario.txtNumero
         });
     });
 });
