@@ -80,19 +80,19 @@ app.get('/edit/:id', function(req, res){
     if(err){
         console.log(err)
     }else{
-       res.render('/edita.ejs', {Usuario: docs})
+       res.render("/edita.ejs", {Usuario: docs})
     }
   })
 })
 
 app.post('/edit/:id', function(req, res){
-  usuario.findByIdAndUpdate(req.params.id, 
+  Usuario.findByIdAndUpdate(req.params.id, 
     { nome: req.body.txtNome, 
       sobrenome: req.body.txtSobrenome, 
       email: req.body.txtEmail, 
       senha: req.body.txtSenha
     },function(err,docs){
-      res.redirect("/", {usuario: docs})
+      res.redirect("/", {Usuario: docs})
     })
 })
 //Crud parte da edição de dados
