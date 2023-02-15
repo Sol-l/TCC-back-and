@@ -6,7 +6,7 @@ passport.use(new LocalStrategy(async function verify(username, password, cb) {
 
     const usuario = await Usuario.findOne({
         email: username
-    })
+    }).catch(err => console.error(err)); // Adicionado console.error para tratar erros
 
     if (!usuario) {
         console.log('usuario')
@@ -23,8 +23,9 @@ passport.use(new LocalStrategy(async function verify(username, password, cb) {
             console.log('ok')
             return cb(null, usuario);
         }
-    }
+    } 
 }));
+
 passport.serializeUser(function (usuario, cb) {
     process.nextTick(function () {
         cb(null, {
@@ -33,7 +34,7 @@ passport.serializeUser(function (usuario, cb) {
             senha: usuario.txtSenha,
         });
     });
-});
+}); 
 
 passport.deserializeUser(function (usuario, cb) {
     process.nextTick(function () {
