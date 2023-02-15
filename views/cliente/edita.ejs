@@ -218,26 +218,26 @@
 		<div class="lol">
 			<div class="col">
 				<label for="exampleInputEmail1" class="form-label-name"></label>
-				<input type="hidden" name="txtId" class="form-control" aria-label="First name" readonly value="<%=usuario._id%>">
+				<input type="hidden" name="txtId" class="form-control" aria-label="First name" readonly value="<%=Admin._id%>">
 			  </div><br>
 			<div class="col">
 			  <label for="exampleInputEmail1" class="form-label-name">Nome</label>
-				<input type="text" name="txtNome" class="form-control" placeholder="Nome" aria-label="First name" required value="<%=usuario.nome%>">
+				<input type="text" name="txtNome" class="form-control" placeholder="Nome" aria-label="First name" required value="<%=Admin.nome%>">
 			</div><br>
 			<div class="col">
 			  <label for="exampleInputEmail1" class="form-label-name">Sobrenome</label>
-			  <input type="text" name="txtSobrenome" class="form-control" placeholder="Sobrenome" aria-label="Last name" required value="<%=usuario.sobrenome%>">
+			  <input type="text" name="txtSobrenome" class="form-control" placeholder="Sobrenome" aria-label="Last name" required value="<%=Admin.sobrenome%>">
 			</div>
 		  </div>
 		  <br>
 			<div class="mb-3">
 			  <label for="exampleInputEmail1" class="form-label">Endereço de Email</label>
-			 <input type="email" name="txtEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu Email" required value="<%=usuario.email%>">
+			 <input type="email" name="txtEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu Email" required value="<%=Admin.email%>">
 			  <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com ninguém.</div>
 			</div><br>
 			<div class="mb-3">
 				<div class="form-group field-one">	
-			<input type="password" name="txtSenha" class="form-control" id="PasswordC" placeholder="Digite sua Senha" required value="<%=usuario.senha%>">
+			<input type="password" name="txtSenha" class="form-control" id="PasswordC" placeholder="Digite sua Senha" required value="<%=Admin.senha%>">
 				<i class="fa fa-eye" id="eye" onclick="mostrarOcultarSenha()" oaria-hidden="true"></i>
 			  	</div>
 			</div>

@@ -1,38 +1,68 @@
 var Usuario = require('../model/usuario')
 
+
 async function index(req, res) {
-  res.render("cliente/index.ejs");
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id)
+  }
+  res.render("cliente/index.ejs",{Admin:usuario});
 }
 
 async function abrelogin(req, res) {
-  res.render("cliente/login.ejs");
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id)
+  }
+  res.render("cliente/login.ejs",{Admin:usuario});
 }
 
 async function abrecadastro(req, res) {
-  res.render("cliente/cadastro.ejs");
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id)
+  }
+  res.render("cliente/cadastro.ejs",{Admin:usuario});
 }
 
 async function abreproduto(req, res) {
-  res.render("cliente/product.ejs");
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id)
+  }
+  res.render("cliente/product.ejs",{Admin:usuario});
 }
 
 async function abrestore(req, res) {
-  res.render("cliente/store.ejs");
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id)
+  }
+  res.render("cliente/store.ejs",{Admin:usuario});
 }
 
 async function abrecheckout(req, res) {
-  res.render("cliente/checkout.ejs");
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id)
+  }
+  res.render("cliente/checkout.ejs",{Admin:usuario});
 }
 
 async function abreedita(req, res) {
-  res.render("cliente/edita.ejs");
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id)
+  }
+  res.render("cliente/edita.ejs",{Admin:usuario});
 }
 
 async function abreperfil(req, res) {
-  Usuario.find({}).exec(function(err,docs){ //a chave dentro do find pode receber um parametro para buscar os usuários
-    res.render("cliente/perfil.ejs" ,{Usuarios:docs});
-  })
-  
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id)
+  }
+  res.render("cliente/perfil.ejs" ,{Admin:usuario});
 }
 
 module.exports = {
