@@ -9,6 +9,12 @@ async function index(req, res) {
   res.render("cliente/index.ejs",{Admin:usuario});
 }
 
+async function indexLogout(req, res) {
+  req.user = 'undefined'
+  res.render("cliente/index.ejs",{Admin:undefined});
+
+}
+
 async function abrelogin(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
@@ -54,7 +60,7 @@ async function abreedita(req, res) {
   if(typeof req.user !== 'undefined'){
     usuario = await Usuario.findById(req.user.id)
   }
-  res.render("cliente/edita.ejs",{Admin:usuario});
+    res.render("cliente/edita.ejs",{Admin:usuario});
 }
 
 async function abreperfil(req, res) {
@@ -74,4 +80,5 @@ module.exports = {
   abrecheckout,
   abreperfil,
   abreedita,
+  indexLogout,
 };
