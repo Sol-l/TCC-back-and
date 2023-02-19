@@ -6,16 +6,17 @@ const bloqueio = require('../config/bloqueio')
 router.get("/", clienteController.index);
 router.get("/indexLogout", clienteController.indexLogout);
 router.get("/login", clienteController.abrelogin);
-//router.post("/login", clienteController.abrelogin);
 router.get("/cadastro", clienteController.abrecadastro);
 router.get("/product", clienteController.abreproduto);
 router.get("/store", clienteController.abrestore);
 router.get("/checkout",bloqueio, clienteController.abrecheckout);
 router.get("/perfil", clienteController.abreperfil);
 router.get("/edita", clienteController.abreedita);
+router.get("/editaEndereco", clienteController.abreeditaendereco);
 
 router.get('/logout', function (req, res, next) {
-    /*req.logout(function (err) {
+
+   /* req.logout(function (err) {
         if (err) {
             return next(err);
         }
@@ -28,7 +29,8 @@ router.get('/logout', function (req, res, next) {
           res.redirect('/indexLogout');
         }
       });
-    });*/
+    });
+*/
         req.user = undefined
         res.redirect('/indexLogout');
 });

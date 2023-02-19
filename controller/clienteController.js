@@ -63,6 +63,14 @@ async function abreedita(req, res) {
     res.render("cliente/edita.ejs",{Admin:usuario});
 }
 
+async function abreeditaendereco(req, res) {
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id)
+  }
+    res.render("cliente/editaEndereco.ejs",{Admin:usuario});
+}
+
 async function abreperfil(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
@@ -80,5 +88,6 @@ module.exports = {
   abrecheckout,
   abreperfil,
   abreedita,
+  abreeditaendereco,
   indexLogout,
 };

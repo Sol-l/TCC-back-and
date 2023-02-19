@@ -238,9 +238,8 @@
 						<h4>Endereço Cadastrado</h4>
 							<p id="txtRua"><%=Admin.rua%> <%=Admin.numero%> <%=Admin.bairro%>  </p>
 							<p id="txtBairro"> <%=Admin.cidade%> <%=Admin.estado%> <%=Admin.complemento%> </p><br>
-							<button id="edtEndereco" type="button" class="btn btn-success">Editar Endereço</button>
+							<button id="edtEndereco" type="button" class="btn btn-success"> <a href="/edite/<%=Admin.id%>"> Editar Endereço</a></button>
 							<button  id="exConta" type="button" class="btn btn-danger"> <a href="/del/<%=Admin.id%>"> Excluir Conta</a></button>
-							
                         </div>
                     </div>
 				</div>

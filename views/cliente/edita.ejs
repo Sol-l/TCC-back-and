@@ -219,6 +219,7 @@
 			<!-- /container -->
 		</div>
 		<!-- /BREADCRUMB -->
+		
 	<form method="POST">
 		<div class="lol">
 			<div class="col">
@@ -237,12 +238,13 @@
 		  <br>
 			<div class="mb-3">
 			  <label for="exampleInputEmail1" class="form-label">Endereço de Email</label>
-			 <input type="email" name="txtEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu Email" required value="<%=Admin.email%>">
+			  <input type="email" name="txtEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu Email" required value="<%=Admin.email%>">
 			  <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com ninguém.</div>
 			</div><br>
 			<div class="mb-3">
 				<div class="form-group field-one">	
-			<input type="password" name="txtSenha" class="form-control" id="PasswordC" placeholder="Digite sua Senha" required value="<%=Admin.senha%>">
+					<label for="exampleInputPassword">Senha</label>
+					<input type="password" name="txtSenha" class="form-control" id="PasswordC" placeholder="Digite sua Senha" required value="<%=Admin.senha%>">
 				<i class="fa fa-eye" id="eye" onclick="mostrarOcultarSenha()" oaria-hidden="true"></i>
 			  	</div>
 			</div>
@@ -254,111 +256,6 @@
 			<button type="submit" class="btn btn-primary" style="background-color: #FDB900">Editar Dados</button>
 			</div>		 
 		<br>
-				<!-- API endereço --> 
-				
-		  <div class="input-checkbox">
-			<input type="checkbox" id="shiping-address">
-			<div class="alinhar">
-			<label for="shiping-address">
-				<span></span>
-				 Deseja cadastrar seu endereço? (opcional)
-			</label></div>
-			<div class="caption">
-				
-		<script>
-			function limpa_formulário_cep() {
-					//Limpa valores do formulário de cep.
-					document.getElementById('rua').value=("");
-					document.getElementById('bairro').value=("");
-					document.getElementById('cidade').value=("");
-					document.getElementById('uf').value=("");
-			}
-		
-			function meu_callback(conteudo) {
-				if (!("erro" in conteudo)) {
-					//Atualiza os campos com os valores.
-					document.getElementById('rua').value=(conteudo.logradouro);
-					document.getElementById('bairro').value=(conteudo.bairro);
-					document.getElementById('cidade').value=(conteudo.localidade);
-					document.getElementById('uf').value=(conteudo.uf);
-				} //end if.
-				else {
-					//CEP não Encontrado.
-					limpa_formulário_cep();
-					alert("CEP não encontrado.");
-				}
-			}
-				
-			function pesquisacep(valor) {
-		
-				//Nova variável "cep" somente com dígitos.
-				var cep = valor.replace(/\D/g, '');
-		
-				//Verifica se campo cep possui valor informado.
-				if (cep != "") {
-		
-					//Expressão regular para validar o CEP.
-					var validacep = /^[0-9]{8}$/;
-		
-					//Valida o formato do CEP.
-					if(validacep.test(cep)) {
-		
-						//Preenche os campos com "..." enquanto consulta webservice.
-						document.getElementById('rua').value="...";
-						document.getElementById('bairro').value="...";
-						document.getElementById('cidade').value="...";
-						document.getElementById('uf').value="...";
-		
-						//Cria um elemento javascript.
-						var script = document.createElement('script');
-		
-						//Sincroniza com o callback.
-						script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
-		
-						//Insere script no documento e carrega o conteúdo.
-						document.body.appendChild(script);
-		
-					} //end if.
-					else {
-						//cep é inválido.
-						limpa_formulário_cep();
-						alert("Formato de CEP inválido.");
-					}
-				} //end if.
-				else {
-					//cep sem valor, limpa formulário.
-					limpa_formulário_cep();
-				}
-			};
-			</script>
-
-			<div class="mb-5">
-			<form method="post" action=".">
-				<div class="form-group">
-					<input class="input" type="text" id="cep" value="" cep="first-name" placeholder="Digite seu CEP" onblur="pesquisacep(this.value);">
-				</div>
-				<div class="form-group">
-					<input class="input" name="txtRua" type="text" id="rua" placeholder="Rua">
-				</div>
-				<div class="form-group">
-					<input class="input" name="txtBairro" type="text" id="bairro" placeholder="Bairro">
-				</div>
-				<div class="form-group">
-					<input class="input" name="txtCidade" type="text" id="cidade" placeholder="Cidade">
-				</div>
-				<div class="form-group">
-					<input class="input" name="txtEstado"type="text" id="uf" placeholder="Estado">
-				</div>
-				<div class="form-group">
-					<input class="input" name="txtComple"type="text" id="" placeholder="Complemento">
-				</div>
-				<div class="form-group">
-					<input class="input" name="txtNumero" type="text" id="num" placeholder="Digite seu Número">
-				</div>
-			</form>
-			</div>
-		</form>
-		</div>
 
 		<!-- SECTION -->
 		<div class="section">
