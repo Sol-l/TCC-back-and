@@ -1,5 +1,5 @@
 var passport = require('passport');
-var LocalStrategy = require('passport-local');
+var LocalStrategy = require('passport-local').Strategy;
 const Usuario = require('../model/usuario');
 
 passport.use(new LocalStrategy(async function verify(username, password, cb) {
