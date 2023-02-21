@@ -79,7 +79,7 @@ app.get('/edit/:id', function(req, res){
     if(err){
         console.log(err)
     }else{
-       res.render("cliente/edita.ejs", {Usuario: docs})
+       res.render("cliente/edita.ejs", {Admin: docs})
     }
   })
 })
@@ -101,7 +101,7 @@ app.get('/edite/:id', function(req, res){
     if(err){
         console.log(err)
     }else{
-       res.render("cliente/editaEndereco.ejs", {Usuario: docs})
+       res.render("cliente/editaEndereco.ejs", {Admin: docs})
     }
   })
 })
