@@ -14,8 +14,8 @@ router.get("/perfil", clienteController.abreperfil);
 router.get("/edita", clienteController.abreedita);
 router.get("/editaEndereco", clienteController.abreeditaendereco);
 
-/* router.get('/logout', function (req, res, next) {
-
+ router.get('/logout', function (req, res, next) {
+/*
    req.logout(function (err) {
         if (err) {
             return next(err);
@@ -30,10 +30,10 @@ router.get("/editaEndereco", clienteController.abreeditaendereco);
         }
       });
     });
-
+*/
         req.user = undefined
         res.redirect('/indexLogout');
-});*/
+});
 
 //ISSO É DO LOGIN
 const passport = require('../config/passport')
