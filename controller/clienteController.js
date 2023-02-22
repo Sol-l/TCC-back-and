@@ -10,10 +10,25 @@ async function index(req, res) {
 }
 
 async function indexLogout(req, res) {
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.clearCookie('connect.sid'); // Limpa o cookie de sessão
+    res.render("cliente/index.ejs",{Admin:undefined});
+  });
+}
+
+/*async function indexLogout(req, res) {
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.render("cliente/index.ejs",{Admin:undefined});
+  });
+}
+
+async function indexLogout(req, res) {
   req.user = 'undefined'
   res.render("cliente/index.ejs",{Admin:undefined});
 
-}
+}*/
 
 async function abrelogin(req, res) {
   let usuario = ''

@@ -50,4 +50,24 @@ router.post('/login' , passport.authenticate('local', {
 }))
 //ISSO É DO LOGIN
 
+//rotas de adição ao carrinho e favoritos
+router.post('/carrinho', async (req, res) => {
+  const { productId } = req.body;
+  const product = await Product.findById(productId);
+  if (!product) {
+    return res.status(404).send('Produto não encontrado');
+  }
+  // Adicionar o produto ao carrinho
+});
+
+router.delete('/carrinho/:productId', async (req, res) => {
+  const { productId } = req.params;
+  const product = await Product.findById(productId);
+  if (!product) {
+    return res.status(404).send('Produto não encontrado');
+  }
+  // Remover o produto do carrinho
+});
+//rotas de adição ao carrinho e favoritos
+
 module.exports = router;
