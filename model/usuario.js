@@ -4,7 +4,7 @@ var UsuarioSchema = conexao.Schema({
     nome:{type:String},
     sobrenome:{type:String},
     email:{type:String, unique: true},
-    senha:{type:String, unique: true},
+    senha:{type:String},
     rua:{type:String},
     bairro:{type:String},
     cidade:{type:String},

@@ -49,13 +49,13 @@
 					</ul>
 					</ul>
 					<ul class="header-links pull-right">
-						<%if(typeof Admin == 'undefined'){%>
+						<%if(typeof Admin.nome == 'undefined'){%>
 							<li><a href="/login"><i class="fa fa-user"></i>Entrar</a></li>
 							<li><a href="/cadastro"><i class="fa fa-user-plus"></i>Cadastrar</a></li>
 						<%}%>
-						<%if(typeof Admin !== 'undefined'){%>
+						<%if(typeof Admin.nome !== 'undefined'){%>
 							<li><a href="/logout"><i class="fa fa-user"></i>Sair</a></li>
-						<%}%>	
+						<%}%>		
 					</ul>
 				</div>
 			</div>
@@ -190,9 +190,9 @@
 						<li><a href="/store">Produtos</a></li>
 						<li><a href="/checkout">Checkout</a></li>
 						<li><a href="/login">Entrar</a></li>
-						<%if(typeof Admin == 'undefined'){%>
+						<%if(typeof Admin.nome == 'undefined'){%>
 							<%}%>
-							<%if(typeof Admin !== 'undefined'){%>
+							<%if(typeof Admin.nome !== 'undefined'){%>
 								<li><a href="/perfil">Perfil</a></li>
 							<%}%>
 					</ul>

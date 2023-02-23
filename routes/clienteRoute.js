@@ -10,27 +10,11 @@ router.get("/cadastro", clienteController.abrecadastro);
 router.get("/product", clienteController.abreproduto);
 router.get("/store", clienteController.abrestore);
 router.get("/checkout",bloqueio, clienteController.abrecheckout);
-router.get("/perfil", clienteController.abreperfil);
+router.get("/perfil", bloqueio, clienteController.abreperfil);
 router.get("/edita", clienteController.abreedita);
 router.get("/editaEndereco", clienteController.abreeditaendereco);
 
  router.get('/logout', function (req, res, next) {
-/*
-   req.logout(function (err) {
-        if (err) {
-            return next(err);
-        }
-        res.redirect('/');
-    });
-    req.session.destroy((err) => {
-        if (err) {
-          console.log(err);
-        } else {
-          res.redirect('/indexLogout');
-        }
-      });
-    });
-*/
         req.user = undefined
         res.redirect('/indexLogout');
 });
@@ -48,7 +32,10 @@ router.post('/login' , passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
 }))
+
 //ISSO É DO LOGIN
+
+
 
 //rotas de adição ao carrinho e favoritos
 router.post('/carrinho', async (req, res) => {
