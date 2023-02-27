@@ -5,6 +5,7 @@ const passport = require('passport')
 var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
 var Usuario = require('./model/usuario')
+var Produto = require('./model/produto')
 var session = require('express-session')
 
 //ISSO É PARA O LOGIN
