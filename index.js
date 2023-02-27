@@ -118,33 +118,8 @@ app.post('/edite/:id', function(req, res){
       res.redirect("/")
     })
 })
+//Editar dados do endereço
 //Crud parte da edição de dados
-
-
-//Crud parte da edição de dados de Cadastro
-app.get('/edit/:id', function(req, res){
-  Usuario.findById(req.params.id, function(err,docs){
-    if(err){
-        console.log(err)
-    }else{
-       res.render("cliente/edita.ejs", {Usuario: docs})
-    }
-  })
-})
-
-app.post('/edit/:id', function(req, res){
-  Usuario.findByIdAndUpdate(req.params.id, 
-    { rua: req.body.txtRua, 
-      bairro: req.body.txtBairro, 
-      cidade: req.body.txtCidade, 
-      estado: req.body.txtEstado,
-      complemento: req.body.txtComple, 
-      numero: req.body.txtNumero, 
-    },function(err,docs){
-      res.redirect("/")
-    })
-})
-//Crud parte da edição de dados de Cadastro
 
 app.listen("3000", function (req, res) {
   console.log("Servidor rodando");
