@@ -12,7 +12,7 @@
 <body>
     <h1>CADASTRO DE PRODUTO</h1>
     <div class="product-form">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label for="product-name">Nome:</label>
             <input type="text" name="txtNomeProduto" class="form-control" id="product-name" placeholder="Nome do produto" required>
@@ -35,17 +35,17 @@
     
           <div class="form-group">
             <label for="product-description">Descrição:</label>
-            <textarea name="txtNomeProduto" class="form-control" id="product-description" placeholder="Descrição do produto" required></textarea>
+            <textarea name="txtDescricao" class="form-control" id="product-description" placeholder="Descrição do produto" required></textarea>
           </div>
       
           <div class="form-group">
             <label for="product-details">Detalhes:</label>
-            <textarea name="txtNomeProduto" class="form-control" id="product-details" placeholder="Detalhes do produto" required></textarea>
+            <textarea name="txtDetalhes" class="form-control" id="product-details" placeholder="Detalhes do produto" required></textarea>
           </div>
       
           <div class="form-group">
             <label for="product-photos">Fotos:</label>
-            <input type="file" name="product-photos[]" class="form-control" id="product-photos" accept="image/*" multiple required>
+            <input type="file" name="txtFotos" class="form-control" id="product-photos" accept="image/*" multiple required>
           </div><br>
           
            <div class="form-group">

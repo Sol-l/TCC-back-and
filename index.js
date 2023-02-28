@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser')
 var Usuario = require('./model/usuario')
 var Produto = require('./model/produto')
 var session = require('express-session')
+const upload = require('./config/upload')
 
 //ISSO É PARA O LOGIN
 app.use(session({
@@ -121,6 +122,53 @@ app.post('/edite/:id', function(req, res){
 })
 //Editar dados do endereço
 //Crud parte da edição de dados
+
+//PARTE DO CADASTRO DE PRODUTOS//
+
+app.post('/admin/adicionaproduto',upload.array('txtFotos',10), function(req, res){
+
+  const x = []; // Inicializa o array com um array vazio
+  
+  for (let i = 0; i < req.files.length; i++) {
+    
+    x.push(req.files[i].filename); // Adiciona o nome do arquivo ao array produto.foto
+  }
+  console.log(x)
+  
+  var produto = new Produto({
+    nome: req.body.txtNomeProduto,
+    categoria: req.body.txtCategoria,
+    preco: req.body.txtPreco,
+    quantidade: req.body.txtQuantidade,
+    descricao: req.body.txtDescricao,
+    detalhes: req.body.txtDetalhes,
+    foto: x
+  })  
+
+  produto.save(function(err){
+    if(err){
+      if(err.message.includes('duplicate key error')) {
+        err = new Error('Esse produto já foi cadastrado');
+        res.redirect('/');
+      } 
+    }else {
+      res.redirect('/admin/adicionaproduto');
+    }
+  })
+})
+
+//parte da abertura da página pelo id do produto
+
+app.get('/abreproduto/:id', function(req, res){
+  Produto.findById(req.params.id, function(err,docs){
+    if(err){
+        console.log(err)
+    }else{
+       res.render("cliente/product.ejs", {Produto: docs})
+    }
+  })
+})
+
 
 app.listen("3000", function (req, res) {
   console.log("Servidor rodando");
