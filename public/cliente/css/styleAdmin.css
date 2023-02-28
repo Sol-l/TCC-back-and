@@ -48,4 +48,38 @@
 
     h1{
         text-align: center;
+        
     }
+
+    .form-control[type="file"] {
+      height: auto;
+      padding: 0.375rem 0.75rem;
+      line-height: 1.5;
+      background-color: transparent;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+    }
+
+    .form-control[type="file"]:focus {
+      border-color: #86b7fe;
+      box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    }
+/*Estilo do botão*/
+    input[type="file"]::-webkit-file-upload-button {
+      color: #000000;
+      background-color: #FFC107;
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+    }
+    
+    input[type="file"]::-webkit-file-upload-button:hover {
+      background-color: #FFC107;
+      border-color: #000000;
+    }
+    
+    input[type="file"]::-webkit-file-upload-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    }
+    
