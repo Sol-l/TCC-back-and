@@ -159,12 +159,16 @@ app.post('/admin/adicionaproduto',upload.array('txtFotos',10), function(req, res
 
 //parte da abertura da página pelo id do produto
 
-app.get('/abreproduto/:id', function(req, res){
+app.get('/abreproduto/:id',async function(req, res){
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id)
+  }
   Produto.findById(req.params.id, function(err,docs){
     if(err){
         console.log(err)
     }else{
-       res.render("cliente/product.ejs", {Produto: docs})
+       res.render("cliente/product.ejs", {Admin:usuario, Produto: docs})
     }
   })
 })

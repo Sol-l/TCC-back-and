@@ -1,11 +1,13 @@
 var Usuario = require('../model/usuario')
+var Produto = require('../model/produto')
 
 async function index(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
     usuario = await Usuario.findById(req.user.id)
   }
-  res.render("cliente/index.ejs",{Admin:usuario});
+  const produtos = await Produto.find()
+  res.render("cliente/index.ejs",{Admin:usuario, Produtos:produtos});
 }
 
 async function indexLogout(req, res) {
