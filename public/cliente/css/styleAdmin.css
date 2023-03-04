@@ -82,4 +82,33 @@
       outline: none;
       box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
     }
+
+    /* Estilo do Select*/
+
+    /* Estilo para el contenedor del formulario */
+
+/* Estilo para la etiqueta del campo */
+label #selecaoCat{
+  display: block; /* Hace que la etiqueta ocupe una línea completa */
+  font-size: 1rem; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+  margin-bottom: 0.5rem; /* Agrega un espacio entre la etiqueta y el campo */
+}
+
+
+/* Estilo para el campo de selección */
+.input-select {
+  font-size: 1rem; /* Tamaño de fuente */
+  padding: 0.5rem; /* Agrega un espacio alrededor del campo */
+  border-radius: 0.25rem; /* Redondea los bordes del campo */
+  border: 1px solid #ced4da; /* Agrega un borde al campo */
+  width: 100%; /* Ancho completo del contenedor */
+}
+
+/* Estilo para el texto de la opción seleccionada */
+.input-select option:checked {
+  font-weight: bold; /* Texto en negrita para la opción seleccionada */
+  background-color: #f8f9fa; /* Agrega un color de fondo para resaltar la opción seleccionada */
+}
+
     

@@ -213,7 +213,7 @@
 						<ul class="breadcrumb-tree">
 							<li><a href="/">Home</a></li>
 							<li><a href="#">Produto</a></li>
-							<li class="active">Tábua de Carne</li>
+							<li class="active"><%=Produto.categoria%></li>
 						</ul>
 					</div>
 				</div>
@@ -259,7 +259,7 @@
 						<div class="product-details">
 							<h2 class="product-name"><%=Produto.nome%></h2>
 							<div>
-								<h3 class="product-price"><%=Produto.preco%></h3>
+								<h3 class="product-price">R$<%=Produto.preco%></h3>
 								<span class="product-available">Em Estoque</span>
 							</div>
 							<p><%=Produto.detalhes%></p>
@@ -268,13 +268,13 @@
 								<label>
 									Tamanho
 									<select class="input-select">
-										<option value="0">X</option>
+										<option value="0">30x45cm</option>
 									</select>
 								</label>
 								<label>
 									Cor
 									<select class="input-select">
-										<option value="0">Vermelho</option>
+										<option value="0">Verniz</option>
 									</select>
 								</label>
 							</div>

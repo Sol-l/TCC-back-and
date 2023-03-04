@@ -17,11 +17,27 @@
             <label for="product-name">Nome:</label>
             <input type="text" name="txtNomeProduto" class="form-control" id="product-name" placeholder="Nome do produto" required>
           </div>
-      
+
           <div class="form-group">
-            <label for="product-category">Categoria:</label>
-            <input type="text" name="txtCategoria" class="form-control" id="product-category" placeholder="Categoria do produto" required>
+            <label>
+              <div>
+              Categoria:
+            </div><br>
+              <select class="input-select" name="txtCategoria" id="product-category" required>
+                <option value="" selected disabled>Selecione a Categoria</option>
+                <option value="Tábua de Carne">Tábua de Carne</option>
+                <option value="Faca">Faca</option>
+                <option value="Colar de Mesa">Colar de Mesa</option>                
+                <option value="Quadro MDF">Quadro MDF</option>
+                <option value="Abajur">Abajur</option>
+                <option value="Mandala">Mandala</option>
+                <option value="Rústico">Rústico</option>
+                <option value="Cuia de Chimarrão">Cuia de Chimarrão</option>
+                <option value="Garrafa Térmica">Garrafa Térmica</option>
+              </select>
+            </label>
           </div>
+          
       
           <div class="form-group">
             <label for="product-price">Preço:</label>
