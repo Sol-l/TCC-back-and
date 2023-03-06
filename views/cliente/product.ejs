@@ -266,28 +266,29 @@
 
 							<div class="product-options">
 								<label>
-									Tamanho
+									Tamanho 
 									<select class="input-select">
-										<option value="0">30x45cm</option>
+										<option value="0"><%=Produto.dimensoes%></option>
 									</select>
 								</label>
 								<label>
-									Cor
+									Quantidade  
 									<select class="input-select">
-										<option value="0">Verniz</option>
+									  <% for (var i=1; i<=Produto.quantidade; i++) { %>
+										<option value="<%=i%>"><%=i%></option>
+									  <% } %>
 									</select>
-								</label>
+								  </label>
 							</div>
-
 							<div class="add-to-cart">
-								<div class="qty-label">
+								<!--<div class="qty-label">
 									Qtd
 									<div class="input-number">
 										<input type="number">
 										<span class="qty-up">+</span>
 										<span class="qty-down">-</span>
 									</div>
-								</div>
+								</div>-->
 								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add ao carrinho</button>
 							</div>
 

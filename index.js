@@ -138,6 +138,7 @@ app.post('/admin/adicionaproduto',upload.array('txtFotos',10), function(req, res
   var produto = new Produto({
     nome: req.body.txtNomeProduto,
     categoria: req.body.txtCategoria,
+    dimensoes: req.body.txtDimensoes,
     preco: req.body.txtPreco,
     quantidade: req.body.txtQuantidade,
     descricao: req.body.txtDescricao,
