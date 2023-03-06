@@ -222,7 +222,7 @@
 							</div>
 						</section>
 						<section class="item">
-							<img src="img/corrousel2.jpg" alt="img1" class="img-responsive" width="100%">
+							<img src="img/folhas.jpeg" alt="img1" class="img-responsive" width="100%">
 							<div class="carousel-caption">
 								<h2>Procurando algum presente único e original?</h2>
 								<p>Aqui você encontrará produtos personalizados e muito mais!</p>
@@ -416,19 +416,24 @@
 						<div class="products-widget-slick" data-nav="#slick-nav-3">
 							<div>
 								<!-- product widget -->
-								<!-- /product -->
-								<%Produtos.forEach(function(produto){%>
+								<% let contas = 0; %>
+								<% for (let i = 0; i < Produtos.length && contas < 3; i++) { %>
+								  <% const produto = Produtos[i]; %>
+								  <% if (produto.categoria === 'Faca') { %>
 									<div class="product-widget">
-										<div class="product-img">
-											<img src="/admin/imgs/<%=produto.foto[0]%>" alt="">
-										</div>
-									<div class="product-body">
-										<p class="product-category"><%=produto.categoria%></p>
-										<h3 class="product-name"><a href="#"><%=produto.nome%></a></h3>
-										<h4 class="product-price">R$<%=produto.preco%></h4>
+									  <div class="product-img">
+										<img src="/admin/imgs/<%= produto.foto[0] %>" alt="">
+									  </div>
+									  <div class="product-body">
+										<p class="product-category"><%= produto.categoria %></p>
+										<h3 class="product-name"><a href="#"><%= produto.nome %></a></h3>
+										<h4 class="product-price">R$<%= produto.preco %></h4>
+									  </div>
 									</div>
-								</div>
-								<%})%>
+									<% contas++; %>
+								  <% } %>
+								<% } %>
+								
 								<!-- /product widget -->
 							</div>
 						</div>
@@ -445,21 +450,24 @@
 						<div class="products-widget-slick" data-nav="#slick-nav-4">
 							<div>
 								<!-- product widget -->
-								<%Produtos.forEach(function(produto){%>
+								<% let conta = 0; %>
+								<% for (let i = 0; i < Produtos.length && conta < 3; i++) { %>
+								  <% const produto = Produtos[i]; %>
+								  <% if (produto.categoria === 'Tábua de Carne') { %>
 									<div class="product-widget">
-										<div class="product-img">
-											<img src="/admin/imgs/<%=produto.foto[0]%>" alt="">
-										</div>
-									<div class="product-body">
-										<p class="product-category"><%=produto.categoria%></p>
-										<h3 class="product-name"><a href="#"><%=produto.nome%></a></h3>
-										<h4 class="product-price">R$<%=produto.preco%></h4>
+									  <div class="product-img">
+										<img src="/admin/imgs/<%= produto.foto[0] %>" alt="">
+									  </div>
+									  <div class="product-body">
+										<p class="product-category"><%= produto.categoria %></p>
+										<h3 class="product-name"><a href="#"><%= produto.nome %></a></h3>
+										<h4 class="product-price">R$<%= produto.preco %></h4>
+									  </div>
 									</div>
-								</div>
-								<%})%>
+									<% conta++; %>
+								  <% } %>
+								<% } %>
 								<!-- /product widget -->
-
-								
 							</div>
 						</div>
 					</div>
@@ -477,84 +485,25 @@
 						<div class="products-widget-slick" data-nav="#slick-nav-5">
 							<div>
 								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product01.png" alt="">
+								<% let cont = 0; %>
+								<% for (let i = 0; i < Produtos.length && cont < 3; i++) { %>
+								  <% const produto = Produtos[i]; %>
+								  <% if (produto.categoria === 'Abajur') { %>
+									<div class="product-widget">
+									  <div class="product-img">
+										<img src="/admin/imgs/<%= produto.foto[0] %>" alt="">
+									  </div>
+									  <div class="product-body">
+										<p class="product-category"><%= produto.categoria %></p>
+										<h3 class="product-name"><a href="#"><%= produto.nome %></a></h3>
+										<h4 class="product-price">R$<%= produto.preco %></h4>
+									  </div>
 									</div>
-									<div class="product-body">
-										<p class="product-category">Categoria</p>
-										<h3 class="product-name"><a href="#">Tábua de Carne</a></h3>
-										<h4 class="product-price">R$980.00 <del class="product-old-price">R$990.00</del></h4>
-									</div>
-								</div>
+									<% cont++; %>
+								  <% } %>
+								<% } %>
 								<!-- /product widget -->
 
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product02.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Categoria</p>
-										<h3 class="product-name"><a href="#">Tábua de Carne</a></h3>
-										<h4 class="product-price">R$980.00 <del class="product-old-price">R$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product03.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Categoria</p>
-										<h3 class="product-name"><a href="#">Tábua de Carne</a></h3>
-										<h4 class="product-price">R$980.00 <del class="product-old-price">R$990.00</del></h4>
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
-
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product04.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Categoria</p>
-										<h3 class="product-name"><a href="#">Tábua de Carne</a></h3>
-										<h4 class="product-price">R$980.00 <del class="product-old-price">R$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product05.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Categoria</p>
-										<h3 class="product-name"><a href="#">Tábua de Carne</a></h3>
-										<h4 class="product-price">R$980.00 <del class="product-old-price">R$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product06.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Categoria</p>
-										<h3 class="product-name"><a href="#">Tábua de Carne</a></h3>
-										<h4 class="product-price">R$980.00 <del class="product-old-price">R$990.00</del></h4>
-									</div>
-								</div>
-								<!-- product widget -->
 							</div>
 						</div>
 					</div>
