@@ -22,13 +22,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>3</td>
-            <td>Produto 3</td>
-            <td>Categoria A</td>
-            <td><img src="caminho/para/foto3.jpg" alt="Foto do Produto 3"></td>
-            <td><a href=""><button class="delete-btn">Excluir</button></a></td>
-          </tr>
+          <% Produtos.forEach(function(produto) { %>
+            <tr>
+              <td><%= produto._id %></td>
+              <td><%= produto.nome %></td>
+              <td><%= produto.categoria %></td>
+              <td><img src="/admin/imgs/<%=produto.foto[0]%>" alt="Foto do Produto"></td>
+              <td><a href="/delproduto/<%= produto._id %>"><button class="delete-btn">Excluir</button></a></td>
+            </tr>
+          <% }) %>
+          
         </tbody>
       </table>
       
