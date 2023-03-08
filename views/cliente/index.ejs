@@ -297,7 +297,7 @@
 											<!--Janela do Produto-->
 											<div class="product-body">
 												<p class="product-category"><%=produto.categoria%></p>
-												<h3 class="product-name"><a href="#"><%=produto.nome%></a></h3>
+												<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%=produto.nome%></a></h3>
 												<h4 class="product-price">R$<%=produto.preco%></h4>
 												<div class="product-rating">
 												</div>
@@ -341,10 +341,11 @@
 							<h3 class="title">Coleção de Produtos</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab1" data-category="abajures">Abajures</a></li>
-									<li><a data-toggle="tab" href="#tab1" data-category="colar">Colar</a></li>
-									<li><a data-toggle="tab" href="#tab1" data-category="tabuas">Tábuas</a></li>
-									<li><a data-toggle="tab" href="#tab1" data-category="relogios-rusticos">Relógios Rústicos</a></li>
+									
+									<li class="active"><a data-toggle="tab" href="#tab2" data-category="Faca" aria-expanded="true">Faca</a></li>
+									<li><a data-toggle="tab" href="#tab3" data-category="Abajur">Abajur</a></li>
+									<li><a data-toggle="tab" href="#tab4" data-category="Rústico">Rústico</a></li>
+									<li><a data-toggle="tab" href="#tab5" data-category="Tábua">Tábua</a></li>
 								</ul>								
 							</div>
 						</div>
@@ -356,10 +357,12 @@
 						<div class="row">
 							<div class="products-tabs">
 								<!-- tab -->
+								
+								<!-- /tab -->
 								<div id="tab2" class="tab-pane fade in active">
 									<div class="products-slick" data-nav="#slick-nav-2">
 										<!-- product -->
-										<%Produtos.forEach(function(produto){%>
+										<%Faca.forEach(function(produto){%>
 											<div class="product">
 												<div class="product-img">
 													<img src="/admin/imgs/<%=produto.foto[0]%>" alt="">
@@ -367,7 +370,7 @@
 												<!--Janela do Produto-->
 												<div class="product-body">
 													<p class="product-category"><%=produto.categoria%></p>
-													<h3 class="product-name"><a href="#"><%=produto.nome%></a></h3>
+													<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%=produto.nome%></a></h3>
 													<h4 class="product-price">R$<%=produto.preco%></h4>
 													<div class="product-rating">
 													</div>
@@ -386,7 +389,97 @@
 									</div>
 									<div id="slick-nav-2" class="products-slick-nav"></div>
 								</div>
-								<!-- /tab -->
+								<div id="tab3" class="tab-pane fade in">
+									<div class="products-slick" data-nav="#slick-nav-2">
+										<!-- product -->
+										<%Abajur.forEach(function(produto){%>
+											<div class="product">
+												<div class="product-img">
+													<img src="/admin/imgs/<%=produto.foto[0]%>" alt="">
+												</div>
+												<!--Janela do Produto-->
+												<div class="product-body">
+													<p class="product-category"><%=produto.categoria%></p>
+													<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%=produto.nome%></a></h3>
+													<h4 class="product-price">R$<%=produto.preco%></h4>
+													<div class="product-rating">
+													</div>
+													<div class="product-btns">
+														<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
+														<i class="fa fa-exchange"></i>
+														<a href="/abreproduto/<%=produto._id%>"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
+													</div>
+												</div>
+												<div class="add-to-cart">
+													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add ao carrinho</button>
+												</div>
+											</div>
+											<%})%>
+										<!-- /product -->
+									</div>
+									<div id="slick-nav-2" class="products-slick-nav"></div>
+								</div>
+								<div id="tab4" class="tab-pane fade in">
+									<div class="products-slick" data-nav="#slick-nav-2">
+										<!-- product -->
+										<%Rústico.forEach(function(produto){%>
+											<div class="product">
+												<div class="product-img">
+													<img src="/admin/imgs/<%=produto.foto[0]%>" alt="">
+												</div>
+												<!--Janela do Produto-->
+												<div class="product-body">
+													<p class="product-category"><%=produto.categoria%></p>
+													<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%=produto.nome%></a></h3>
+													<h4 class="product-price">R$<%=produto.preco%></h4>
+													<div class="product-rating">
+													</div>
+													<div class="product-btns">
+														<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
+														<i class="fa fa-exchange"></i>
+														<a href="/abreproduto/<%=produto._id%>"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
+													</div>
+												</div>
+												<div class="add-to-cart">
+													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add ao carrinho</button>
+												</div>
+											</div>
+											<%})%>
+										<!-- /product -->
+									</div>
+
+									<div id="slick-nav-2" class="products-slick-nav"></div>
+								</div>
+								<div id="tab5" class="tab-pane fade in">
+									<div class="products-slick" data-nav="#slick-nav-2">
+										<!-- product -->
+										<%Tábua.forEach(function(produto){%>
+											<div class="product">
+												<div class="product-img">
+													<img src="/admin/imgs/<%=produto.foto[0]%>" alt="">
+												</div>
+												<!--Janela do Produto-->
+												<div class="product-body">
+													<p class="product-category"><%=produto.categoria%></p>
+													<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%=produto.nome%></a></h3>
+													<h4 class="product-price">R$<%=produto.preco%></h4>
+													<div class="product-rating">
+													</div>
+													<div class="product-btns">
+														<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
+														<i class="fa fa-exchange"></i>
+														<a href="/abreproduto/<%=produto._id%>"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
+													</div>
+												</div>
+												<div class="add-to-cart">
+													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add ao carrinho</button>
+												</div>
+											</div>
+											<%})%>
+										<!-- /product -->
+									</div>
+									<div id="slick-nav-2" class="products-slick-nav"></div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -426,7 +519,7 @@
 									  </div>
 									  <div class="product-body">
 										<p class="product-category"><%= produto.categoria %></p>
-										<h3 class="product-name"><a href="#"><%= produto.nome %></a></h3>
+										<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%= produto.nome %></a></h3>
 										<h4 class="product-price">R$<%= produto.preco %></h4>
 									  </div>
 									</div>
@@ -460,7 +553,7 @@
 									  </div>
 									  <div class="product-body">
 										<p class="product-category"><%= produto.categoria %></p>
-										<h3 class="product-name"><a href="#"><%= produto.nome %></a></h3>
+										<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%= produto.nome %></a></h3>
 										<h4 class="product-price">R$<%= produto.preco %></h4>
 									  </div>
 									</div>
@@ -495,7 +588,7 @@
 									  </div>
 									  <div class="product-body">
 										<p class="product-category"><%= produto.categoria %></p>
-										<h3 class="product-name"><a href="#"><%= produto.nome %></a></h3>
+										<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%= produto.nome %></a></h3>
 										<h4 class="product-price">R$<%= produto.preco %></h4>
 									  </div>
 									</div>
