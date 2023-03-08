@@ -46,7 +46,8 @@ async function abrestore(req, res) {
   if(typeof req.user !== 'undefined'){
     usuario = await Usuario.findById(req.user.id)
   }
-  res.render("cliente/store.ejs",{Admin:usuario});
+  const produtos = await Produto.find()
+  res.render("cliente/store.ejs",{Admin:usuario, Produtos:produtos});
 }
 
 async function abrecheckout(req, res) {

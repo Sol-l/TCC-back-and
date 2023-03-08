@@ -174,7 +174,20 @@ app.get('/abreproduto/:id',async function(req, res){
   })
 })
 
+//parte para excluir produtos cadastrados
 
+app.get('/delproduto/:id', function(req, res){
+  Produto.findByIdAndDelete(req.params.id, function(err){
+    if(err){
+      console.log(err)
+    }else{
+      res.redirect('/admin/excluiproduto');
+    }
+  })
+  console.log(req.params.id)
+})
+
+//avisa que o servidor está rodando
 app.listen("3000", function (req, res) {
   console.log("Servidor rodando");
 });
