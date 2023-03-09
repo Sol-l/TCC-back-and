@@ -302,11 +302,8 @@
 							</ul>
 
 							<ul class="product-links">
-								<li>compartilhar:</li>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i></a></li>
+								<li>Loja Física:</li>
+								<li><a href="https://www.google.com.br/maps/@-31.3109924,-54.1129319,3a,75y,54.68h,84.93t/data=!3m6!1e1!3m4!1so09rELnOH1uLoA0xTQ7MCg!2e0!7i16384!8i8192"><i class="fa fa-map-marker"></i> Av Espanha 439</a></li>
 							</ul>
 
 						</div>
@@ -371,107 +368,37 @@
 					</div>
 
 					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
+					<% let contas = 0; %>
+					<% for (let i = 0; i < Produto.length && contas < 4; i++) { %>
+					  <% const produto = Produtos[i]; %>
+					  <% if (produto.categoria === 'Faca') { %>
+						<div class="col-md-3 col-xs-6">
+						  <div class="product">
 							<div class="product-img">
-								<img src="./img/product01.png" alt="">
+							  <img src="/admin/imgs/<%= produto.foto[0] %>" alt="">
 							</div>
 							<div class="product-body">
-								<p class="product-category">Categoria</p>
-								<h3 class="product-name"><a href="#">Tábua de Carne</a></h3>
-								<h4 class="product-price">R$980.00 <del class="product-old-price">R$990.00</del></h4>
-								<div class="product-rating">
-								</div>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista</span></button>
-									<i class="fa fa-exchange"></i>
-									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
-								</div>
+							  <p class="product-category"><%= produto.categoria %></p>
+							  <h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%= produto.nome %></a></h3>
+							  <h4 class="product-price">R$<%= produto.preco %></h4>
+							  <div class="product-rating">
+							  </div>
+							  <div class="product-btns">
+								<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista</span></button>
+								<i class="fa fa-exchange"></i>
+								<a href="/abreproduto/<%=produto._id%>"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
+							  </div>
 							</div>
 							<div class="add-to-cart">
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add ao carrinho</button>
+							  <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add ao carrinho</button>
 							</div>
+						  </div>
 						</div>
-					</div>
+						<% contas++; %>
+					  <% } %>
+					<% } %>
+					
 					<!-- /product -->
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="./img/product02.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Categoria</p>
-								<h3 class="product-name"><a href="#">Tábua de Carne</a></h3>
-								<h4 class="product-price">R$980.00 <del class="product-old-price">R$990.00</del></h4>
-								<div class="product-rating">
-								</div>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista</span></button>
-									<i class="fa fa-exchange"></i>
-									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
-								</div>
-							</div>
-							<div class="add-to-cart">
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add ao carrinho</button>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
-
-					<div class="clearfix visible-sm visible-xs"></div>
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="./img/product03.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Categoria</p>
-								<h3 class="product-name"><a href="#">Tábua de Carne</a></h3>
-								<h4 class="product-price">R$980.00 <del class="product-old-price">R$990.00</del></h4>
-								<div class="product-rating">
-								</div>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista</span></button>
-									<i class="fa fa-exchange"></i>
-									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
-								</div>
-							</div>
-							<div class="add-to-cart">
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add ao carrinho</button>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="./img/product04.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Categoria</p>
-								<h3 class="product-name"><a href="#">Tábua de Carne</a></h3>
-								<h4 class="product-price">R$980.00 <del class="product-old-price">R$990.00</del></h4>
-								<div class="product-rating">
-								</div>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista</span></button>
-									<i class="fa fa-exchange"></i>
-									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></button>
-								</div>
-							</div>
-							<div class="add-to-cart">
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add ao carrinho</button>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
-
 				</div>
 				<!-- /row -->
 			</div>

@@ -49,7 +49,19 @@ async function abreproduto(req, res) {
   if(typeof req.user !== 'undefined'){
     usuario = await Usuario.findById(req.user.id)
   }
-  res.render("cliente/product.ejs",{Admin:usuario});
+  const Tábua = await Produto.find({categoria:"Tábua"})
+  const Faca = await Produto.find({categoria:"Faca"})
+  const Colar = await Produto.find({categoria:"Colar"})
+  const Quadro = await Produto.find({categoria:"Quadro"})
+  const Abajur = await Produto.find({categoria:"Abajur"})
+  const Mandala = await Produto.find({categoria:"Mandala"})
+  const Rústico = await Produto.find({categoria:"Rústico"})
+  const Cuia = await Produto.find({categoria:"Cuia"})
+  const Térmica = await Produto.find({categoria:"Térmica"})
+  const produtos = await Produto.find()
+  res.render("cliente/product.ejs",{
+  Admin:usuario, Tábua:Tábua, Faca:Faca, Colar:Colar, Quadro:Quadro, Abajur:Abajur, Mandala:Mandala,
+  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos});
 }
 
 async function abrestore(req, res) {
