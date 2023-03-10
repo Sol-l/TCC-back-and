@@ -38,13 +38,11 @@ router.post('/login' , passport.authenticate('local', {
 
 
 //rotas de adição ao carrinho e favoritos
-router.post('/carrinho', async (req, res) => {
-  const { productId } = req.body;
-  const product = await Product.findById(productId);
-  if (!product) {
-    return res.status(404).send('Produto não encontrado');
-  }
-  // Adicionar o produto ao carrinho
+router.post('/carrinho/:id',bloqueio, async (req, res) => {
+  const product = await Product.findById(req.params.id);
+  const usuario = await usuario.findById(req.user.id)
+  usuario.carrinho.push(produto._id)
+  await usuario.save()
 });
 
 router.delete('/carrinho/:productId', async (req, res) => {

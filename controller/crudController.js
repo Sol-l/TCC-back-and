@@ -1,4 +1,5 @@
 var Produto = require('../model/produto')
+var Usuario = require('../model/usuario')
 
 async function adicionaproduto(req, res) {
   res.render("crud/adicionaproduto.ejs");

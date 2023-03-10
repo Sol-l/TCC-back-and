@@ -11,6 +11,14 @@ var UsuarioSchema = conexao.Schema({
     estado:{type:String},
     complemento:{type:String},
     numero:{type:String},
+    carrinho:[{
+        type: conexao.Schema.Types.ObjectId,
+        ref: 'Produto'
+    }],
+    desejo:[{
+        type: conexao.Schema.Types.ObjectId,
+        ref: 'Produto'
+    }]
 })
   
 module.exports = conexao.model("Usuario", UsuarioSchema);
