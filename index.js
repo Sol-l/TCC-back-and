@@ -35,8 +35,6 @@ app.set("view engine", "ejs");
 app.use("/", clienteRoute);
 app.use("/admin", crudRoute);
 
-
-
 app.post('/cadastro', function(req, res){
     var usuario = new Usuario({
       nome: req.body.txtNome,
@@ -48,7 +46,8 @@ app.post('/cadastro', function(req, res){
       cidade: req.body.txtCidade,
       estado: req.body.txtEstado,
       complemento: req.body.txtComple,
-      numero: req.body.txtNumero
+      numero: req.body.txtNumero,
+
     })
     usuario.save(function(err){
       if(err){
@@ -115,7 +114,7 @@ app.post('/edite/:id', function(req, res){
       cidade: req.body.txtCidade, 
       estado: req.body.txtEstado,
       complemento: req.body.txtComple, 
-      numero: req.body.txtNumero
+      numero: req.body.txtNumero,
     },function(err,docs){
       res.redirect("/")
     })

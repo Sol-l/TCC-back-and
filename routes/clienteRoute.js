@@ -1,3 +1,6 @@
+var Usuario = require('../model/usuario')
+var Produto = require('../model/produto')
+
 const express = require("express");
 const router = express.Router();
 const clienteController = require("../controller/clienteController");
@@ -38,21 +41,42 @@ router.post('/login' , passport.authenticate('local', {
 
 
 //rotas de adição ao carrinho e favoritos
-router.post('/carrinho/:id',bloqueio, async (req, res) => {
-  const product = await Product.findById(req.params.id);
-  const usuario = await usuario.findById(req.user.id)
+
+
+router.get('/carrinho/:id',bloqueio, async (req, res) => {
+  const produto = await Produto.findById(req.params.id);
+  const usuario = await Usuario.findById(req.user.id)
   usuario.carrinho.push(produto._id)
   await usuario.save()
 });
 
 router.delete('/carrinho/:productId', async (req, res) => {
-  const { productId } = req.params;
-  const product = await Product.findById(productId);
-  if (!product) {
+  const { produtoId } = req.params.populate('carrinho.produto');
+  const produto = await Produto.findById(produtoId);
+  if (!produto) {
     return res.status(404).send('Produto não encontrado');
   }
   // Remover o produto do carrinho
 });
+
+//desejos
+router.get('/desejo/:id',bloqueio, async (req, res) => {
+  const produto = await Produto.findById(req.params.id);
+  const usuario = await Usuario.findById(req.user.id)
+  usuario.desejo.push(produto._id)
+  await usuario.save()
+});
+
+router.delete('/desejo/:productId', async (req, res) => {
+  const { produtoId } = req.params;
+  const produto = await Produto.findById(produtoId);
+  if (!produto) {
+    return res.status(404).send('Produto não encontrado');
+  }
+  // Remover o produto do carrinho
+});
+
+
 //rotas de adição ao carrinho e favoritos
 
 module.exports = router;

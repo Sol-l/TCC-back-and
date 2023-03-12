@@ -16,9 +16,11 @@ async function index(req, res) {
   const Cuia = await Produto.find({categoria:"Cuia"})
   const Térmica = await Produto.find({categoria:"Térmica"})
   const produtos = await Produto.find()
+  const carrinho = await Produto.find()
+  //const desejo = await usuario.desejo;
   res.render("cliente/index.ejs",{
   Admin:usuario, Tábua:Tábua, Faca:Faca, Colar:Colar, Quadro:Quadro, Abajur:Abajur, Mandala:Mandala,
-  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos});
+  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos, Carrinho:carrinho});
 }
 
 async function indexLogout(req, res) {
@@ -58,10 +60,9 @@ async function abreproduto(req, res) {
   const Rústico = await Produto.find({categoria:"Rústico"})
   const Cuia = await Produto.find({categoria:"Cuia"})
   const Térmica = await Produto.find({categoria:"Térmica"})
-  const produtos = await Produto.find()
   res.render("cliente/product.ejs",{
   Admin:usuario, Tábua:Tábua, Faca:Faca, Colar:Colar, Quadro:Quadro, Abajur:Abajur, Mandala:Mandala,
-  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos});
+  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica});
 }
 
 async function abrestore(req, res) {
@@ -79,9 +80,11 @@ async function abrestore(req, res) {
   const Cuia = await Produto.find({categoria:"Cuia"})
   const Térmica = await Produto.find({categoria:"Térmica"})
   const produtos = await Produto.find()
+  const carrinho = await Produto.find()
+
   res.render("cliente/store.ejs",{
   Admin:usuario, Tábua:Tábua, Faca:Faca, Colar:Colar, Quadro:Quadro, Abajur:Abajur, Mandala:Mandala,
-  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos});
+  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos, Carrinho:carrinho});
 }
 
 async function abrecheckout(req, res) {

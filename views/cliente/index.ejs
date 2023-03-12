@@ -99,16 +99,18 @@
 									<div class="cart-dropdown">
 										<div class="cart-list">
 											<!--Inicio do for dos favoritos-->
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product01.png" alt="">
+											<%Produtos.forEach(function(produto){%>
+												<div class="product-widget">
+													<div class="product-img">
+														<img src="/admin/imgs/<%=produto.foto[0]%>" alt="">
+													</div>
+													<div class="product-body">
+														<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%=produto.nome%></a></h3>
+														<h4 class="product-price"><span class="qty">1x</span>R$<%=produto.preco%></h4>
+													</div>
+													<a href="/desejo/:productId"><button class="delete"></a><i class="fa fa-close"></i></button>
 												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">1x</span>R$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
+												<%})%>
 											<!--fim do for dos favoritos-->
 										</div>
 										<div class="cart-summary">
@@ -132,16 +134,19 @@
 									<div class="cart-dropdown">
 										<div class="cart-list">
 											<!-- Inicio do For do carrinho-->
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product01.png" alt="">
+											<%Produtos.forEach(function(produto){%>
+												<div class="product-widget">
+													<div class="product-img">
+														<img src="/admin/imgs/<%=produto.foto[0]%>" alt="">
+													</div>
+													<div class="product-body">
+														<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%=produto.nome%></a></h3>
+														<h4 class="product-price"><span class="qty">1x</span>R$<%=produto.preco%></h4>
+													</div>
+													<a href="/carrinho/:productId"><button class="delete"></a><i class="fa fa-close"></i></button>
 												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">1x</span>R$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
+												<%})%>
+											  
 											<!-- Fim do for do carrinho-->											
 										</div>
 										<div class="cart-summary">
@@ -269,14 +274,6 @@
 					<div class="col-md-12">
 						<div class="section-title">
 							<h3 class="title">NOVOS PRODUTOS</h3>
-							<!--<div class="section-nav">
-								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab1">Abajures</a></li>
-									<li><a data-toggle="tab" href="#tab1">Colar</a></li>
-									<li><a data-toggle="tab" href="#tab1">Tábuas</a></li>
-									<li><a data-toggle="tab" href="#tab1">Relógios Rústicos</a></li>
-								</ul>
-							</div>-->
 						</div>
 					</div>
 					<!-- /section title -->
@@ -302,13 +299,13 @@
 												<div class="product-rating">
 												</div>
 												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
+													<a href="/desejo/<%=produto._id%>"><button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></a></button>
 													<i class="fa fa-exchange"></i>
 													<a href="/abreproduto/<%=produto._id%>"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add ao carrinho</button>
+												<a href="/carrinho/<%=produto._id%>"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add ao carrinho</button></a>
 											</div>
 										</div>
 										<%})%>
