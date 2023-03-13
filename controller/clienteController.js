@@ -17,10 +17,9 @@ async function index(req, res) {
   const Térmica = await Produto.find({categoria:"Térmica"})
   const produtos = await Produto.find()
   const carrinho = await Produto.find()
-  //const desejo = await usuario.desejo;
   res.render("cliente/index.ejs",{
   Admin:usuario, Tábua:Tábua, Faca:Faca, Colar:Colar, Quadro:Quadro, Abajur:Abajur, Mandala:Mandala,
-  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos, Carrinho:carrinho});
+  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos});
 }
 
 async function indexLogout(req, res) {
@@ -119,6 +118,14 @@ async function abreperfil(req, res) {
   res.render("cliente/perfil.ejs" ,{Admin:usuario});
 }
 
+async function abretermos(req, res) {
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id)
+  }
+  res.render("cliente/termos.ejs" ,{Admin:usuario});
+}
+
 module.exports = {
   index,
   abrelogin,
@@ -130,4 +137,5 @@ module.exports = {
   abreedita,
   abreeditaendereco,
   indexLogout,
+  abretermos,
 };

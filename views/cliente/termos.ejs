@@ -35,6 +35,7 @@
  		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
  		<![endif]-->
 
+
     </head>
 	<body>
 		<!-- HEADER -->
@@ -91,6 +92,7 @@
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
+								
 								<!-- Wishlist -->
 								<div class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
@@ -206,10 +208,10 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Perfil</h3>
+						<h3 class="breadcrumb-header">Termos & Condições</h3>
 						<ul class="breadcrumb-tree">
 							<li><a href="/">Home</a></li>
-							<li class="active">Perfil</li>
+							<li class="active">Termos & Condições</li>
 						</ul>
 					</div>
 				</div>
@@ -219,29 +221,29 @@
 		</div>
 		<!-- /BREADCRUMB -->
 
+
 		<!-- SECTION -->
 		<div class="section">
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-                    <div class="row2">
-                        <div class="box-cell box1">
-					
-						<h4>Informações da Conta</h4>
-							<p id="txtNome"><%=Admin.nome%> <%=Admin.sobrenome%> </p>
-							<p id="txtEmail"><%=Admin.email%></p>
-							<button id="edtNome" type="buttons" class="btn btn-success"> <a href="/edit/<%=Admin.id%>">Editar Informações</a></button>
+					<h2>1. Informações de Conta</h2>
+					<p>Ao criar uma conta conosco, você concorda em fornecer informações precisas, completas e atualizadas. É sua responsabilidade manter suas informações de conta atualizadas. Caso suspeite que sua conta foi comprometida, informe-nos imediatamente.</p>
+					<h2>2. Propriedade Intelectual</h2>
+					<p>O conteúdo deste site, incluindo imagens, textos, gráficos, logotipos e marcas registradas, é protegido por direitos autorais e outras leis de propriedade intelectual. Você não pode usar ou reproduzir esse conteúdo sem a permissão por escrito do Studio Soll Artesanatos.</p>
+					<h2>3. Produtos e Serviços</h2>
+					<p>Os produtos e serviços oferecidos pelo Studio Soll Artesanatos estão sujeitos à disponibilidade. Nos esforçamos para manter a precisão das informações sobre preços, descrições e imagens de produtos. No entanto, nos reservamos o direito de corrigir quaisquer erros ou omissões, e de modificar ou descontinuar produtos a qualquer momento sem aviso prévio.</p>
+					<h2>4. Pagamentos e Envio</h2>
+					<p>O pagamento é devido no momento da compra. Aceitamos várias formas de pagamento, incluindo cartões de crédito e PayPal. Os custos de envio são calculados com base no peso e destino do pedido e serão exibidos durante o checkout. Não nos responsabilizamos por atrasos ou perda de encomendas devido a problemas com a entrega.</p>
+					<h2>5. Política de Devolução</h2>
+					<p>Aceitamos devoluções de produtos não personalizados em até 30 dias após a entrega, desde que estejam em sua condição original. Produtos personalizados não são elegíveis para devolução, a menos que haja defeitos ou erros em nossa parte.
+					<h2>6. Privacidade e Segurança</h2>
+					<p>O Studio Soll Artesanatos leva a privacidade e a segurança dos dados de nossos clientes a sério. Todas as informações fornecidas são armazenadas com segurança e não serão compartilhadas com terceiros, a menos que exigido por lei.
+					<h2>7. Modificações dos Termos e Condições</h2>
+					<p>Nos reservamos o direito de modificar estes termos e condições a qualquer momento, sem aviso prévio. É sua responsabilidade verificar periodicamente esta página para revisar os termos e condições atualizados.
+					<p>Ao usar o site do Studio Soll Artesanatos, você concorda em cumprir estes termos e condições. Se tiver alguma dúvida ou preocupação, entre em contato conosco. Obrigado por escolher o Studio Soll Artesanatos!
 					</div>
-					<div class="box-cell">
-						<h4>Endereço Cadastrado</h4>
-							<p id="txtRua"><%=Admin.rua%> <%=Admin.numero%> <%=Admin.bairro%>  </p>
-							<p id="txtBairro"> <%=Admin.cidade%> <%=Admin.estado%> <%=Admin.complemento%> </p><br>
-							<button id="edtEndereco" type="button" class="btn btn-success"> <a href="/edite/<%=Admin.id%>"> Editar Endereço</a></button>
-							<button  id="exConta" type="button" class="btn btn-danger"> <a href="/del/<%=Admin.id%>"> Excluir Conta</a></button>
-                        </div>
-                    </div>
-				</div>
 				<!-- /row -->
 			</div>
 			<!-- /container -->
@@ -250,10 +252,11 @@
 
 		<!-- NEWSLETTER -->
 		<div id="newsletter" class="section">
+	
 		</div>
 		<!-- /NEWSLETTER -->
 
-		<!-- RODAPÉ -->
+		<!-- FOOTER -->
 		<footer id="footer">
 			<!-- top footer -->
 			<div class="section">
@@ -358,5 +361,7 @@
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/script.js"></script>
+
 	</body>
 </html>

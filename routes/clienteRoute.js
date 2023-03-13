@@ -16,6 +16,7 @@ router.get("/checkout",bloqueio, clienteController.abrecheckout);
 router.get("/perfil", bloqueio, clienteController.abreperfil);
 router.get("/edita", clienteController.abreedita);
 router.get("/editaEndereco", clienteController.abreeditaendereco);
+router.get("/termos", clienteController.abretermos);
 
  router.get('/logout', function (req, res, next) {
         req.user = undefined
@@ -51,7 +52,7 @@ router.get('/carrinho/:id',bloqueio, async (req, res) => {
 });
 
 router.delete('/carrinho/:productId', async (req, res) => {
-  const { produtoId } = req.params.populate('carrinho.produto');
+  const { produtoId } = req.params;
   const produto = await Produto.findById(produtoId);
   if (!produto) {
     return res.status(404).send('Produto não encontrado');
