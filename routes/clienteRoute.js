@@ -49,6 +49,7 @@ router.get('/carrinho/:id',bloqueio, async (req, res) => {
   const usuario = await Usuario.findById(req.user.id)
   usuario.carrinho.push(produto._id)
   await usuario.save()
+  res.redirect('/')
 });
 
 router.delete('/carrinho/:productId', async (req, res) => {
@@ -66,6 +67,7 @@ router.get('/desejo/:id',bloqueio, async (req, res) => {
   const usuario = await Usuario.findById(req.user.id)
   usuario.desejo.push(produto._id)
   await usuario.save()
+  res.redirect('/')
 });
 
 router.delete('/desejo/:productId', async (req, res) => {

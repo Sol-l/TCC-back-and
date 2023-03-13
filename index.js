@@ -27,6 +27,7 @@ app.use(bodyParser.json())
 const clienteRoute = require("./routes/clienteRoute");
 const crudRoute = require("./routes/crudRoute");
 const { render } = require("ejs");
+const usuario = require("./model/usuario");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public"))); //dirname significa pasta do diretório ou pasta em que os arquivos estão 
@@ -75,14 +76,9 @@ app.get('/del/:id', function(req, res){
 //Crud parte da exclusão de dados
 
 //Crud parte da edição de dados 
-app.get('/edit/:id', function(req, res){
-  Usuario.findById(req.params.id, function(err,docs){
-    if(err){
-        console.log(err)
-    }else{
-       res.render("cliente/edita.ejs", {Admin: docs})
-    }
-  })
+app.get('/edit/:id', async function(req, res){
+  const usuario = await Usuario.findById(req.params.id).populate('carrinho')
+       res.render("cliente/edita.ejs", {Admin: usuario, Carrinho:usuario.carrinho })
 })
 
 app.post('/edit/:id', function(req, res){
@@ -97,15 +93,10 @@ app.post('/edit/:id', function(req, res){
 })
 
 //Editar dados do endereço
-app.get('/edite/:id', function(req, res){
-  Usuario.findById(req.params.id, function(err,docs){
-    if(err){
-        console.log(err)
-    }else{
-       res.render("cliente/editaEndereco.ejs", {Admin: docs})
-    }
+app.get('/edite/:id', async function(req, res){
+  const usuario = await Usuario.findById(req.params.id).populate('carrinho')
+       res.render("cliente/editaEndereco.ejs", {Admin: usuario, Carrinho:usuario.carrinho})
   })
-})
 
 app.post('/edite/:id', function(req, res){
   Usuario.findByIdAndUpdate(req.params.id, 
@@ -159,16 +150,18 @@ app.post('/admin/adicionaproduto',upload.array('txtFotos',10), function(req, res
 
 //parte da abertura da página pelo id do produto
 
-app.get('/abreproduto/:id',async function(req, res){
+
+app.get('/abreproduto/:id', async function(req, res){
   let usuario = ''
   if(typeof req.user !== 'undefined'){
-    usuario = await Usuario.findById(req.user.id)
+    const usuario = await Usuario.findById(req.params.id).populate('carrinho')
   }
   Produto.findById(req.params.id, function(err,docs){
     if(err){
         console.log(err)
     }else{
-       res.render("cliente/product.ejs", {Admin:usuario, Produto: docs})
+      res.render("cliente/product.ejs", {Admin: usuario, Carrinho:usuario.carrinho, Produto:docs})
+      // res.render("cliente/product.ejs", {Admin:usuario, Produto: docs, Carrinho:usuario.carrinho})
     }
   })
 })

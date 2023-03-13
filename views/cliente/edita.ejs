@@ -102,16 +102,20 @@
 									<div class="cart-dropdown">
 										<div class="cart-list">
 											<!--Inicio do for do carrinho-->
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product01.png" alt="">
+											<%
+											if(Carrinho){
+											Carrinho.forEach(function(produto){%>
+												<div class="product-widget">
+													<div class="product-img">
+														<img src="/admin/imgs/<%=produto.foto[0]%>" alt="">
+													</div>
+													<div class="product-body">
+														<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%=produto.nome%></a></h3>
+														<h4 class="product-price"><span class="qty">1x</span>R$<%=produto.preco%></h4>
+													</div>
+													<a href="/carrinho/:productId"><button class="delete"><i class="fa fa-close"></i></button></a>
 												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">1x</span>R$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
+												<%})}%>
 											<!--fim do for do carrinho-->
 										</div>
 										<div class="cart-summary">
@@ -250,7 +254,7 @@
 			</div>
 		  <div class="mb-3 form-check">
 			<input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-			<label class="form-check-label" for="exampleCheck1">Estou ciente e CONCORDO com os termos e políticas de privacidade</label>
+			<label class="form-check-label" for="exampleCheck1">Estou ciente e CONCORDO com os <a href="/termos">termos & condições</a> de privacidade</label>
 		  </div>
 		  <div class="mb-4">
 			<button type="submit" class="btn btn-primary" style="background-color: #FDB900">Editar Dados</button>

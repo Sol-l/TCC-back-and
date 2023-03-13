@@ -4,7 +4,7 @@ var Produto = require('../model/produto')
 async function index(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
-    usuario = await Usuario.findById(req.user.id)
+    usuario = await Usuario.findById(req.user.id).populate('carrinho')
   }
   const Tábua = await Produto.find({categoria:"Tábua"})
   const Faca = await Produto.find({categoria:"Faca"})
@@ -16,10 +16,10 @@ async function index(req, res) {
   const Cuia = await Produto.find({categoria:"Cuia"})
   const Térmica = await Produto.find({categoria:"Térmica"})
   const produtos = await Produto.find()
-  const carrinho = await Produto.find()
+  console.log(usuario.carrinho)
   res.render("cliente/index.ejs",{
   Admin:usuario, Tábua:Tábua, Faca:Faca, Colar:Colar, Quadro:Quadro, Abajur:Abajur, Mandala:Mandala,
-  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos});
+  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos, Carrinho:usuario.carrinho});
 }
 
 async function indexLogout(req, res) {
@@ -32,42 +32,23 @@ async function indexLogout(req, res) {
 async function abrelogin(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
-    usuario = await Usuario.findById(req.user.id)
+    usuario = await Usuario.findById(req.user.id).populate('carrinho')
   }
-  res.render("cliente/login.ejs",{Admin:usuario});
+  res.render("cliente/login.ejs",{Admin:usuario, Carrinho:usuario.carrinho});
 }
 
 async function abrecadastro(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
-    usuario = await Usuario.findById(req.user.id)
+    usuario = await Usuario.findById(req.user.id).populate('carrinho')
   }
-  res.render("cliente/cadastro.ejs",{Admin:usuario});
+  res.render("cliente/cadastro.ejs",{Admin:usuario, Carrinho:usuario.carrinho});
 }
 
 async function abreproduto(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
-    usuario = await Usuario.findById(req.user.id)
-  }
-  const Tábua = await Produto.find({categoria:"Tábua"})
-  const Faca = await Produto.find({categoria:"Faca"})
-  const Colar = await Produto.find({categoria:"Colar"})
-  const Quadro = await Produto.find({categoria:"Quadro"})
-  const Abajur = await Produto.find({categoria:"Abajur"})
-  const Mandala = await Produto.find({categoria:"Mandala"})
-  const Rústico = await Produto.find({categoria:"Rústico"})
-  const Cuia = await Produto.find({categoria:"Cuia"})
-  const Térmica = await Produto.find({categoria:"Térmica"})
-  res.render("cliente/product.ejs",{
-  Admin:usuario, Tábua:Tábua, Faca:Faca, Colar:Colar, Quadro:Quadro, Abajur:Abajur, Mandala:Mandala,
-  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica});
-}
-
-async function abrestore(req, res) {
-  let usuario = ''
-  if(typeof req.user !== 'undefined'){
-    usuario = await Usuario.findById(req.user.id)
+    usuario = await Usuario.findById(req.user.id).populate('carrinho')
   }
   const Tábua = await Produto.find({categoria:"Tábua"})
   const Faca = await Produto.find({categoria:"Faca"})
@@ -79,51 +60,70 @@ async function abrestore(req, res) {
   const Cuia = await Produto.find({categoria:"Cuia"})
   const Térmica = await Produto.find({categoria:"Térmica"})
   const produtos = await Produto.find()
-  const carrinho = await Produto.find()
+  res.render("cliente/product.ejs",{
+  Admin:usuario, Tábua:Tábua, Faca:Faca, Colar:Colar, Quadro:Quadro, Abajur:Abajur, Mandala:Mandala,
+  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos, Carrinho:usuario.carrinho});
+}
+
+async function abrestore(req, res) {
+  let usuario = ''
+  if(typeof req.user !== 'undefined'){
+    usuario = await Usuario.findById(req.user.id).populate('carrinho')
+  }
+  const Tábua = await Produto.find({categoria:"Tábua"})
+  const Faca = await Produto.find({categoria:"Faca"})
+  const Colar = await Produto.find({categoria:"Colar"})
+  const Quadro = await Produto.find({categoria:"Quadro"})
+  const Abajur = await Produto.find({categoria:"Abajur"})
+  const Mandala = await Produto.find({categoria:"Mandala"})
+  const Rústico = await Produto.find({categoria:"Rústico"})
+  const Cuia = await Produto.find({categoria:"Cuia"})
+  const Térmica = await Produto.find({categoria:"Térmica"})
+  const produtos = await Produto.find()
 
   res.render("cliente/store.ejs",{
   Admin:usuario, Tábua:Tábua, Faca:Faca, Colar:Colar, Quadro:Quadro, Abajur:Abajur, Mandala:Mandala,
-  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos, Carrinho:carrinho});
+  Rústico:Rústico, Cuia:Cuia, Térmica:Térmica, Produtos:produtos, Carrinho:usuario.carrinho});
 }
 
 async function abrecheckout(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
-    usuario = await Usuario.findById(req.user.id)
+    usuario = await Usuario.findById(req.user.id).populate('carrinho')
   }
-  res.render("cliente/checkout.ejs",{Admin:usuario});
+  res.render("cliente/checkout.ejs",{Admin:usuario, Carrinho:usuario.carrinho});
 }
 
 async function abreedita(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
-    usuario = await Usuario.findById(req.user.id)
+    usuario = await Usuario.findById(req.user.id).populate('carrinho')
   }
-    res.render("cliente/edita.ejs",{Admin:usuario});
+    res.render("cliente/edita.ejs",{Admin:usuario, Carrinho:usuario.carrinho});
 }
 
 async function abreeditaendereco(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
-    usuario = await Usuario.findById(req.user.id)
+    usuario = await Usuario.findById(req.user.id).populate('carrinho')
   }
-    res.render("cliente/editaEndereco.ejs",{Admin:usuario});
+    res.render("cliente/editaEndereco.ejs",{Admin:usuario, Carrinho:usuario.carrinho});
 }
 
 async function abreperfil(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
-    usuario = await Usuario.findById(req.user.id)
+    usuario = await Usuario.findById(req.user.id).populate('carrinho')
   }
-  res.render("cliente/perfil.ejs" ,{Admin:usuario});
+  res.render("cliente/perfil.ejs" ,{Admin:usuario, Carrinho:usuario.carrinho});
 }
 
 async function abretermos(req, res) {
   let usuario = ''
   if(typeof req.user !== 'undefined'){
-    usuario = await Usuario.findById(req.user.id)
+    usuario = await Usuario.findById(req.user.id).populate('carrinho')
   }
-  res.render("cliente/termos.ejs" ,{Admin:usuario});
+  res.render("cliente/termos.ejs" ,{Admin:usuario, Carrinho:usuario.carrinho});
 }
 
 module.exports = {
