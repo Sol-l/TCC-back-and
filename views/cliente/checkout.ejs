@@ -347,6 +347,7 @@
 					</div>
 
 					<!-- Order Details -->
+					
 					<div class="col-md-5 order-details">
 						<div class="section-title text-center">
 							<h3 class="title">Pedido</h3>
@@ -356,19 +357,18 @@
 								<div><strong>PRODUTO</strong></div>
 								<div><strong>TOTAL</strong></div>
 							</div>
+							<%Carrinho.forEach(function(produto){%>
 							<div class="order-products">
 								<div class="order-col">
-									<div>1x Tábua de Carne 30x45</div>
-									<div>R$300,00</div>
+									<div>1x <%=produto.nome%> </div>
+									<div>R$<%=produto.preco%></div>
 								</div>
-								<div class="order-col">
-									<div>1x Relógio Artesanal</div>
-									<div>R$150,00</div>
-								</div>
-							</div>								
+							</div>	
+							<%})%>
+							
 							<div class="order-col">
 								<div><strong>TOTAL</strong></div>
-								<div><strong class="order-total">R$450,00</strong></div>
+								<div><strong class="order-total">R$500,00</strong></div>
 							</div>
 						</div>
 						<div class="payment-method">

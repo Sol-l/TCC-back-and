@@ -241,56 +241,50 @@
 							<div class="checkbox-filter">
 
 								<div class="input-checkbox">
-									<input type="checkbox" id="category-1">
 									<label for="category-1">
 										<span></span>
 										Tábuas de Carne
-										<small>(120)</small>
+										<small>(10)</small>
 									</label>
 								</div>
 
 								<div class="input-checkbox">
-									<input type="checkbox" id="category-2">
 									<label for="category-2">
 										<span></span>
 										Relógios Artesanais
-										<small>(740)</small>
+										<small>(4)</small>
 									</label>
 								</div>
 
 								<div class="input-checkbox">
-									<input type="checkbox" id="category-3">
 									<label for="category-3">
 										<span></span>
 										Abajures 
-										<small>(1450)</small>
+										<small>(6)</small>
 									</label>
 								</div>
 
 								<div class="input-checkbox">
-									<input type="checkbox" id="category-4">
 									<label for="category-4">
 										<span></span>
 										Quadros em MDF
-										<small>(578)</small>
+										<small>(4)</small>
 									</label>
 								</div>
 
 								<div class="input-checkbox">
-									<input type="checkbox" id="category-5">
 									<label for="category-5">
 										<span></span>
 										Mandalas
-										<small>(120)</small>
+										<small>(5)</small>
 									</label>
 								</div>
 
 								<div class="input-checkbox">
-									<input type="checkbox" id="category-6">
 									<label for="category-6">
 										<span></span>
 										Facas 
-										<small>(740)</small>
+										<small>(8)</small>
 									</label>
 								</div>
 							</div>
@@ -340,22 +334,18 @@
 									Ordenar Por:
 									<select class="input-select">
 										<option value="0">Aleatório</option>
-										<option value="1">Menor Valor</option>
-										<option value="2">Maior Valor</option>
 									</select>
 								</label>
 
 								<label>
 									Mostrar:
 									<select class="input-select">
-										<option value="0">20</option>
-										<option value="1">50</option>
+										<option value="0">all</option>
 									</select>
 								</label>
 							</div>
 							<ul class="store-grid">
 								<li class="active"><i class="fa fa-th"></i></li>
-								<li><a href="#"><i class="fa fa-th-list"></i></a></li>
 							</ul>
 						</div>
 						<!-- /store top filter -->
@@ -376,7 +366,7 @@
 											<div class="product-rating">
 											</div>
 											<div class="product-btns">
-												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
+												<a href="/desejo/<%=produto._id%>"><button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></a></button>
 												<i class="fa fa-exchange"></i>
 												<a href="/abreproduto/<%=produto._id%>"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 											</div>

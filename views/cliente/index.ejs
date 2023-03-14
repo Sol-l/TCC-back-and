@@ -99,7 +99,9 @@
 									<div class="cart-dropdown">
 										<div class="cart-list">
 											<!--Inicio do for dos favoritos-->
-											<%Produtos.forEach(function(produto){%>
+											<%
+											if(Desejo){
+											Desejo.forEach(function(produto){%>
 												<div class="product-widget">
 													<div class="product-img">
 														<img src="/admin/imgs/<%=produto.foto[0]%>" alt="">
@@ -108,9 +110,9 @@
 														<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%=produto.nome%></a></h3>
 														<h4 class="product-price"><span class="qty">1x</span>R$<%=produto.preco%></h4>
 													</div>
-													<a href="/desejo/:productId"><button class="delete"></a><i class="fa fa-close"></i></button>
+													<a href="/carrinho/:productId"><button class="delete"><i class="fa fa-close"></i></button></a>
 												</div>
-												<%})%>
+												<%})}%>
 											<!--fim do for dos favoritos-->
 										</div>
 										<div class="cart-summary">
@@ -118,7 +120,7 @@
 											<h5>SUBTOTAL: R$980.00</h5>
 										</div>
 										<div class="cart-btns">
-											<a href="#">Adicionar ao Carrinho  <i class="fa fa-arrow-circle-right"></i></a>
+											<a href="/store">Ver mais Produtos  <i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 									</div>
 								</div>
@@ -145,7 +147,7 @@
 														<h3 class="product-name"><a href="/abreproduto/<%=produto._id%>"><%=produto.nome%></a></h3>
 														<h4 class="product-price"><span class="qty">1x</span>R$<%=produto.preco%></h4>
 													</div>
-													<a href="/carrinho/:productId"><button class="delete"><i class="fa fa-close"></i></button></a>
+													<a href="/carrinho/deleta/<%=produto._id%>"><button class="delete"><i class="fa fa-close"></i></button></a>
 												</div>
 												<%})}%>
 											  
@@ -235,15 +237,6 @@
 								<p>Aqui você encontrará produtos personalizados e muito mais!</p>
 							</div>
 						</section>
-						<!-- carousel -3
-						<section class="item">
-							<img src="img/teste.jpg" alt="img1" class="img-responsive" width="100%">
-							<div class="carousel-caption ">
-								<h2>Texto alea</h2>
-								<p>Carara</p>
-							</div>
-						</section>
-						 carousel-->
 					</div>
 					<div class="vertical">
 				<a href="#carrossel" class="carousel-control left" data-slide="prev" role="button">
@@ -373,7 +366,7 @@
 													<div class="product-rating">
 													</div>
 													<div class="product-btns">
-														<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
+														<a href="/desejo/<%=produto._id%>"><button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></a></button>
 														<i class="fa fa-exchange"></i>
 														<a href="/abreproduto/<%=produto._id%>"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 													</div>
@@ -403,7 +396,7 @@
 													<div class="product-rating">
 													</div>
 													<div class="product-btns">
-														<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
+														<a href="/desejo/<%=produto._id%>"><button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></a></button>
 														<i class="fa fa-exchange"></i>
 														<a href="/abreproduto/<%=produto._id%>"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 													</div>
@@ -433,7 +426,7 @@
 													<div class="product-rating">
 													</div>
 													<div class="product-btns">
-														<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
+														<a href="/desejo/<%=produto._id%>"><button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></a></button>
 														<i class="fa fa-exchange"></i>
 														<a href="/abreproduto/<%=produto._id%>"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 													</div>
@@ -464,7 +457,7 @@
 													<div class="product-rating">
 													</div>
 													<div class="product-btns">
-														<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></button>
+														<a href="/desejo/<%=produto._id%>"><button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add à lista </span></a></button>
 														<i class="fa fa-exchange"></i>
 														<a href="/abreproduto/<%=produto._id%>"> <button class="quick-view" ><i class="fa fa-eye"></i><span class="tooltipp">visualizar</span></a></button>
 													</div>

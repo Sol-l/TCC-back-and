@@ -77,8 +77,8 @@ app.get('/del/:id', function(req, res){
 
 //Crud parte da edição de dados 
 app.get('/edit/:id', async function(req, res){
-  const usuario = await Usuario.findById(req.params.id).populate('carrinho')
-       res.render("cliente/edita.ejs", {Admin: usuario, Carrinho:usuario.carrinho })
+  const usuario = await Usuario.findById(req.params.id).populate('carrinho').populate('desejo')
+       res.render("cliente/edita.ejs", {Admin: usuario, Carrinho:usuario.carrinho, Desejo:usuario.desejo })
 })
 
 app.post('/edit/:id', function(req, res){
@@ -94,8 +94,8 @@ app.post('/edit/:id', function(req, res){
 
 //Editar dados do endereço
 app.get('/edite/:id', async function(req, res){
-  const usuario = await Usuario.findById(req.params.id).populate('carrinho')
-       res.render("cliente/editaEndereco.ejs", {Admin: usuario, Carrinho:usuario.carrinho})
+  const usuario = await Usuario.findById(req.params.id).populate('carrinho').populate('desejo')
+       res.render("cliente/editaEndereco.ejs", {Admin: usuario, Carrinho:usuario.carrinho, Desejo:usuario.desejo})
   })
 
 app.post('/edite/:id', function(req, res){
@@ -154,14 +154,13 @@ app.post('/admin/adicionaproduto',upload.array('txtFotos',10), function(req, res
 app.get('/abreproduto/:id', async function(req, res){
   let usuario = ''
   if(typeof req.user !== 'undefined'){
-    const usuario = await Usuario.findById(req.params.id).populate('carrinho')
+    const usuario = await Usuario.findById(req.params.id).populate('carrinho').populate('desejo')
   }
   Produto.findById(req.params.id, function(err,docs){
     if(err){
         console.log(err)
     }else{
-      res.render("cliente/product.ejs", {Admin: usuario, Carrinho:usuario.carrinho, Produto:docs})
-      // res.render("cliente/product.ejs", {Admin:usuario, Produto: docs, Carrinho:usuario.carrinho})
+      res.render("cliente/product.ejs", {Admin: usuario, Carrinho:usuario.carrinho, Produto:docs, Desejo:usuario.desejo})
     }
   })
 })
