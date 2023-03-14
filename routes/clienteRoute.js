@@ -52,26 +52,24 @@ router.get('/carrinho/:id',bloqueio, async (req, res) => {
   res.redirect('/')
 });
 
-router.get('/carrinho/deleta/:productId', async (req, res) => {
-  const { produtoId } = req.params;
-  const usuario = await Usuario.findById(req.user.id);
-  console.log(usuario.carrinho)
- // console.log(productId)
+router.get('/carrinho/deleta/:id', async (req, res) => {
+  
+
+  const usuario = await Usuario.findById(req.user.id).populate('carrinho');
   // Procurar o índice do produto no array carrinho do usuário
-  const index = usuario.carrinho.findIndex((produto) => produto._id == produtoId);
-  console.log (index)
+  const index = usuario.carrinho.findIndex((produto) => produto._id == req.params.id);
   // Se o produto não está no carrinho, retorna erro 404
   if (index === -1) {
     return res.status(404).send('Produto não encontrado no carrinho');
   }
 
   // Remover o produto do array carrinho usando o método pull do Mongoose
-  usuario.carrinho.pull({ _id: produtoId });
+  usuario.carrinho.pull({ _id: req.params.id });
 
   // Salvar as alterações no banco de dados
   await usuario.save();
 
-  res.send('Produto removido do carrinho');
+  res.redirect('/')
 });
 
 
@@ -84,13 +82,23 @@ router.get('/desejo/:id',bloqueio, async (req, res) => {
   res.redirect('/')
 });
 
-router.delete('/desejo/:productId', async (req, res) => {
-  const { produtoId } = req.params;
-  const produto = await Produto.findById(produtoId);
-  if (!produto) {
-    return res.status(404).send('Produto não encontrado');
+router.get('/desejo/deleta/:id', async (req, res) => {
+  
+  const usuario = await Usuario.findById(req.user.id).populate('desejo');
+  // Procurar o índice do produto no array carrinho do usuário
+  const index = usuario.desejo.findIndex((produto) => produto._id == req.params.id);
+  // Se o produto não está no carrinho, retorna erro 404
+  if (index === -1) {
+    return res.status(404).send('Produto não encontrado nos desejos');
   }
-  // Remover o produto do carrinho
+
+  // Remover o produto do array carrinho usando o método pull do Mongoose
+  usuario.desejo.pull({ _id: req.params.id });
+
+  // Salvar as alterações no banco de dados
+  await usuario.save();
+
+  res.redirect('/')
 });
 
 

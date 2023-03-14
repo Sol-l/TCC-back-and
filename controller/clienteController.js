@@ -6,6 +6,7 @@ async function index(req, res) {
   if(typeof req.user !== 'undefined'){
     usuario = await Usuario.findById(req.user.id).populate('carrinho').populate('desejo')
   }
+ 
   const Tábua = await Produto.find({categoria:"Tábua"})
   const Faca = await Produto.find({categoria:"Faca"})
   const Colar = await Produto.find({categoria:"Colar"})
